@@ -4,201 +4,126 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="27 Things About Fiona - an interactive birthday keepsake.">
-  <meta name="theme-color" content="#f6efe6">
   <title>27 Things About Fiona</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="experience" id="experience">
-    <section class="cover is-active" id="cover" data-screen="cover" aria-labelledby="cover-title">
-      <div class="cover-stack" aria-hidden="true">
-        <span class="cover-paper cover-paper--back"></span>
-        <span class="cover-paper cover-paper--middle"></span>
-        <span class="cover-paper cover-paper--front"></span>
-      </div>
+  <div class="site-shell">
+    <header class="topbar">
+      <button class="drawer-button" id="drawer-button" aria-label="Open memory drawer">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="progress-pill" id="progress-pill">01 / 27</div>
+    </header>
 
-      <div class="cover-copy">
-        <p class="cover-for">for Fiona</p>
-        <h1 id="cover-title">27 things</h1>
-        <p class="cover-subtitle">for your 27th birthday</p>
-        <button class="open-box" id="open-box" type="button">
-          <span>open the memory box</span>
-          <span aria-hidden="true">&#8595;</span>
-        </button>
-      </div>
-    </section>
-
-    <section class="memory-screen" id="memory-01" data-screen="memory" data-memory="01" hidden aria-labelledby="title-01">
-      <header class="memory-toolbar">
-        <button class="toolbar-button drawer-open" type="button" aria-label="Open all memories">
-          <span class="stack-icon" aria-hidden="true"><i></i><i></i><i></i></span>
-        </button>
-        <p class="progress-pill"><span>01</span><em>/</em>27</p>
-      </header>
-
-      <div class="memory-stage">
-        <div class="keepsake keepsake--01">
-          <button class="photo-button" type="button" aria-label="Enlarge photograph for memory 1" data-photo="images/01.jpg" data-photo-alt="Avery as a small child holding newborn Fiona with their father helping support her">
-            <figure class="polaroid polaroid--portrait">
-              <img src="images/01.jpg" alt="Avery as a small child holding newborn Fiona with their father helping support her">
-              <figcaption class="photo-number">01</figcaption>
-              <span class="photo-scribble photo-scribble--date">09.28.1999</span>
-            </figure>
-          </button>
-
-          <button class="note-tab" type="button" aria-expanded="false" aria-controls="note-01">
-            <span class="note-tab-closed">pull out the note</span>
-            <span class="note-tab-open">tuck it back</span>
-            <span aria-hidden="true" class="tab-arrow">&#8595;</span>
-          </button>
-
-          <article class="memory-note" id="note-01">
-            <p class="note-small">one of twenty-seven</p>
-            <h2 id="title-01">You were born</h2>
-            <p class="note-lead">September 28, 1999. Exactly three years and four days after me.</p>
-            <p>The day you were born is probably my earliest memory. I don't remember the hospital or the car ride, or much else about that day. But I remember sitting in a chair, my little feet dangling above the floor, while Dad carefully placed a small bundle in my arms. He kept holding you too, to make sure you were safe.</p>
-            <p>I don't remember much, but I vividly remember holding you.</p>
-            <p>Ever since we were kids, I've thought of you as my favourite birthday present I ever got.</p>
-          </article>
+    <aside class="drawer" id="memory-drawer" aria-hidden="true">
+      <div class="drawer-backdrop" data-close-drawer></div>
+      <div class="drawer-panel">
+        <div class="drawer-panel-head">
+          <h2>Memory Drawer</h2>
+          <button class="drawer-close" data-close-drawer aria-label="Close memory drawer">×</button>
         </div>
+        <nav class="drawer-list">
+          <a href="#memory-01" class="drawer-link" data-jump="memory-01"><span>01</span><em>You were born</em></a>
+          <a href="#memory-02" class="drawer-link" data-jump="memory-02"><span>02</span><em>You completed our family</em></a>
+          <a href="#memory-03" class="drawer-link" data-jump="memory-03"><span>03</span><em>You have always brought joy with you</em></a>
+          <div class="drawer-link drawer-link--muted"><span>04</span><em>coming next</em></div>
+        </nav>
       </div>
+    </aside>
 
-      <nav class="memory-nav" aria-label="Memory navigation">
-        <button class="nav-button nav-button--back" type="button" data-go="cover"><span aria-hidden="true">&#8592;</span> cover</button>
-        <button class="nav-button nav-button--next" type="button" data-go="02">next memory <span aria-hidden="true">&#8594;</span></button>
-      </nav>
-    </section>
-
-    <section class="memory-screen" id="memory-02" data-screen="memory" data-memory="02" hidden aria-labelledby="title-02">
-      <header class="memory-toolbar">
-        <button class="toolbar-button drawer-open" type="button" aria-label="Open all memories">
-          <span class="stack-icon" aria-hidden="true"><i></i><i></i><i></i></span>
-        </button>
-        <p class="progress-pill"><span>02</span><em>/</em>27</p>
-      </header>
-
-      <div class="memory-stage">
-        <div class="keepsake keepsake--02">
-          <button class="photo-button" type="button" aria-label="Enlarge photograph for memory 2" data-photo="images/02.jpg" data-photo-alt="A family portrait of the four Wilkinsons when Fiona was a baby">
-            <figure class="polaroid polaroid--landscape">
-              <img src="images/02.jpg" alt="A family portrait of the four Wilkinsons when Fiona was a baby">
-              <figcaption class="photo-number">02</figcaption>
-              <span class="photo-scribble photo-scribble--family">the four of us.</span>
-              <svg class="doodle doodle--house" viewBox="0 0 90 72" aria-hidden="true">
-                <path d="M10 37 L45 9 L80 37 M18 34 V64 H72 V34 M36 64 V45 H54 V64" />
-                <circle cx="30" cy="29" r="2.4" /><circle cx="40" cy="29" r="2.4" /><circle cx="50" cy="29" r="2.4" /><circle cx="60" cy="29" r="2.4" />
-              </svg>
-            </figure>
-          </button>
-
-          <button class="note-tab" type="button" aria-expanded="false" aria-controls="note-02">
-            <span class="note-tab-closed">pull out the note</span>
-            <span class="note-tab-open">tuck it back</span>
-            <span aria-hidden="true" class="tab-arrow">&#8595;</span>
-          </button>
-
-          <article class="memory-note" id="note-02">
-            <p class="note-small">one of twenty-seven</p>
-            <h2 id="title-02">You completed our family</h2>
-            <p>From day one, you belonged. Your arrival brought a balance to our family that I don't quite know how to explain, except that it felt right with you there.</p>
-            <p>We wouldn't have been the same Wilkinsons from the blue bungalow in rural Ontario without you. You helped make us who we were.</p>
-            <p class="note-signoff">The four of us.</p>
-          </article>
+    <main>
+      <section class="cover screen active" id="cover" data-memory="00">
+        <div class="cover-inner">
+          <p class="cover-kicker">for Fiona</p>
+          <h1>27 things</h1>
+          <p class="cover-subtitle">a birthday keepsake made of memories</p>
+          <button class="open-box" id="open-box">open the box</button>
         </div>
-      </div>
+      </section>
 
-      <nav class="memory-nav" aria-label="Memory navigation">
-        <button class="nav-button nav-button--back" type="button" data-go="01"><span aria-hidden="true">&#8592;</span> previous</button>
-        <button class="nav-button nav-button--next" type="button" data-go="03">next memory <span aria-hidden="true">&#8594;</span></button>
-      </nav>
-    </section>
-
-    <section class="memory-screen" id="memory-03" data-screen="memory" data-memory="03" hidden aria-labelledby="title-03">
-      <header class="memory-toolbar">
-        <button class="toolbar-button drawer-open" type="button" aria-label="Open all memories">
-          <span class="stack-icon" aria-hidden="true"><i></i><i></i><i></i></span>
-        </button>
-        <p class="progress-pill"><span>03</span><em>/</em>27</p>
-      </header>
-
-      <div class="memory-stage">
-        <div class="keepsake keepsake--03">
-          <div class="photo-object">
-            <button class="photo-button" type="button" aria-label="Enlarge photograph for memory 3" data-photo="images/03.jpg" data-photo-alt="Baby Fiona smiling brightly at the camera">
-              <figure class="polaroid polaroid--square">
-                <img src="images/03.jpg" alt="Baby Fiona smiling brightly at the camera">
-                <figcaption class="photo-number">03</figcaption>
+      <section class="screen memory-screen" id="memory-01" data-memory="01">
+        <div class="memory-wrap">
+          <div class="memory-stage">
+            <button class="photo-stack photo-portrait first-peek" data-toggle-note aria-expanded="false">
+              <figure class="polaroid">
+                <img src="images/01.jpg" alt="A childhood photograph showing Avery holding newborn Fiona while Dad supports them.">
+                <figcaption class="photo-number">01</figcaption>
               </figure>
-            </button>
-            <button class="doodle-button sun-button" type="button" aria-label="Make the sun doodle glow">
-              <svg class="doodle doodle--sun" viewBox="0 0 96 96" aria-hidden="true">
-                <circle cx="48" cy="48" r="17" />
-                <path d="M48 8 V22 M48 74 V88 M8 48 H22 M74 48 H88 M20 20 L30 30 M66 66 L76 76 M76 20 L66 30 M30 66 L20 76" />
-              </svg>
+              <div class="note-edge"></div>
             </button>
           </div>
 
-          <button class="note-tab" type="button" aria-expanded="false" aria-controls="note-03">
-            <span class="note-tab-closed">pull out the note</span>
-            <span class="note-tab-open">tuck it back</span>
-            <span aria-hidden="true" class="tab-arrow">&#8595;</span>
-          </button>
+          <article class="note-card" aria-hidden="true">
+            <h2>You were born</h2>
+            <p class="lede">September 28, 1999. Exactly three years and four days after me.</p>
+            <p>The day you were born is probably my earliest memory. I don’t remember the hospital or the car ride, or much else about that day. But I remember sitting in a chair, my little feet dangling above the floor, while Dad carefully placed a small bundle in my arms. He kept holding you too, to make sure you were safe.</p>
+            <p>I don’t remember much, but I vividly remember holding you.</p>
+            <p>Ever since we were kids, I’ve thought of you as my favourite birthday present I ever got.</p>
+          </article>
 
-          <article class="memory-note" id="note-03">
-            <p class="note-small">one of twenty-seven</p>
-            <h2 id="title-03">You have always brought joy with you.</h2>
+          <nav class="memory-nav">
+            <a href="#cover" class="memory-link memory-link--ghost" data-jump="cover">cover</a>
+            <a href="#memory-02" class="memory-link" data-jump="memory-02">next memory</a>
+          </nav>
+        </div>
+      </section>
+
+      <section class="screen memory-screen" id="memory-02" data-memory="02">
+        <div class="memory-wrap">
+          <div class="memory-stage">
+            <button class="photo-stack photo-landscape" data-toggle-note aria-expanded="false">
+              <figure class="polaroid rotate-left">
+                <img src="images/02.jpg" alt="A family portrait of Dad, Mom, baby Fiona, and young Avery.">
+                <figcaption class="photo-number">02</figcaption>
+              </figure>
+              <div class="note-edge"></div>
+            </button>
+          </div>
+
+          <article class="note-card" aria-hidden="true">
+            <h2>You completed our family</h2>
+            <p>From day one, you belonged. Your arrival brought a balance to our family that I don’t quite know how to explain, except that it felt right with you there.</p>
+            <p>We wouldn’t have been the same Wilkinsons from the blue bungalow in rural Ontario without you. You helped make us who we were.</p>
+            <p class="closing-line">The four of us.</p>
+          </article>
+
+          <nav class="memory-nav">
+            <a href="#memory-01" class="memory-link memory-link--ghost" data-jump="memory-01">previous</a>
+            <a href="#memory-03" class="memory-link" data-jump="memory-03">next memory</a>
+          </nav>
+        </div>
+      </section>
+
+      <section class="screen memory-screen" id="memory-03" data-memory="03">
+        <div class="memory-wrap">
+          <div class="memory-stage">
+            <button class="photo-stack photo-portrait" data-toggle-note aria-expanded="false">
+              <figure class="polaroid rotate-right">
+                <img src="images/03.jpg" alt="A smiling baby photo of Fiona lying on patterned bedding.">
+                <figcaption class="photo-number">03</figcaption>
+              </figure>
+              <div class="note-edge"></div>
+            </button>
+          </div>
+
+          <article class="note-card" aria-hidden="true">
+            <h2>You have always brought joy with you.</h2>
             <p>You were such a happy baby. Not in the sense that you never cried or were somehow perfectly easy, but you were so often smiling. You had this naturally cheerful, positive presence that people could feel when you were in the room.</p>
             <p>Looking back at photos of you from that time, I can still see it so clearly. That brightness was already there.</p>
           </article>
+
+          <nav class="memory-nav">
+            <a href="#memory-02" class="memory-link memory-link--ghost" data-jump="memory-02">previous</a>
+            <span class="memory-link memory-link--muted">04 coming next</span>
+          </nav>
         </div>
-      </div>
-
-      <nav class="memory-nav" aria-label="Memory navigation">
-        <button class="nav-button nav-button--back" type="button" data-go="02"><span aria-hidden="true">&#8592;</span> previous</button>
-        <button class="nav-button nav-button--next nav-button--disabled" type="button" disabled>04 coming next</button>
-      </nav>
-    </section>
-  </main>
-
-  <aside class="memory-drawer" id="memory-drawer" aria-hidden="true" aria-label="All memories">
-    <button class="drawer-backdrop" type="button" aria-label="Close all memories"></button>
-    <div class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
-      <div class="drawer-handle" aria-hidden="true"></div>
-      <div class="drawer-heading">
-        <div>
-          <p class="drawer-kicker">the memory box</p>
-          <h2 id="drawer-title">All 27</h2>
-        </div>
-        <button class="drawer-close" type="button" aria-label="Close all memories">&#10005;</button>
-      </div>
-
-      <div class="memory-grid">
-        <button class="memory-tile" type="button" data-go="01"><span>01</span><small>You were born</small></button>
-        <button class="memory-tile" type="button" data-go="02"><span>02</span><small>You completed our family</small></button>
-        <button class="memory-tile" type="button" data-go="03"><span>03</span><small>You brought joy</small></button>
-        <span class="memory-tile memory-tile--locked"><span>04</span><small>coming next</small></span>
-        <span class="memory-tile memory-tile--locked"><span>05</span><small>coming next</small></span>
-        <span class="memory-tile memory-tile--locked"><span>06</span><small>coming next</small></span>
-        <span class="memory-tile memory-tile--locked"><span>07</span><small>coming next</small></span>
-        <span class="memory-tile memory-tile--locked"><span>08</span><small>coming next</small></span>
-        <span class="memory-tile memory-tile--locked"><span>09</span><small>coming next</small></span>
-      </div>
-      <p class="drawer-note">We are testing the first three memories before the whole box is filled.</p>
-    </div>
-  </aside>
-
-  <div class="photo-viewer" id="photo-viewer" aria-hidden="true">
-    <button class="photo-viewer-backdrop" type="button" aria-label="Close enlarged photo"></button>
-    <div class="photo-viewer-card" role="dialog" aria-modal="true" aria-label="Enlarged photograph">
-      <button class="photo-viewer-close" type="button" aria-label="Close enlarged photo">&#10005;</button>
-      <img id="photo-viewer-image" src="" alt="">
-    </div>
+      </section>
+    </main>
   </div>
-
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script src="script.js"></script>
 </body>

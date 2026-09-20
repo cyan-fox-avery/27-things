@@ -1,243 +1,101 @@
-const cover = document.getElementById("cover");
-const memoryScreens = [...document.querySelectorAll(".memory-screen")];
-const openBoxButton = document.getElementById("open-box");
-const drawer = document.getElementById("memory-drawer");
-const drawerOpenButtons = [...document.querySelectorAll(".drawer-open")];
-const drawerCloseButtons = [...document.querySelectorAll(".drawer-close, .drawer-backdrop")];
-const photoViewer = document.getElementById("photo-viewer");
-const photoViewerImage = document.getElementById("photo-viewer-image");
-const photoViewerCloseButtons = [...document.querySelectorAll(".photo-viewer-close, .photo-viewer-backdrop")];
-const toast = document.getElementById("toast");
+const screens = [...document.querySelectorAll('.screen')];
+const memoryScreens = [...document.querySelectorAll('.memory-screen')];
+const progressPill = document.getElementById('progress-pill');
+const openBoxButton = document.getElementById('open-box');
+const drawer = document.getElementById('memory-drawer');
+const drawerButton = document.getElementById('drawer-button');
+const drawerCloseTargets = [...document.querySelectorAll('[data-close-drawer]')];
+const jumpLinks = [...document.querySelectorAll('[data-jump]')];
 
-let currentScreen = "cover";
-let lastFocus = null;
-let toastTimer = null;
-let touchStartX = 0;
-let touchStartY = 0;
+function showScreen(id) {
+  const target = document.getElementById(id);
+  if (!target) return;
 
-function getMemoryScreen(number) {
-  return document.querySelector(`.memory-screen[data-memory="${number}"]`);
-}
+  screens.forEach((screen) => screen.classList.remove('active'));
+  target.classList.add('active');
 
-function closeAllNotes() {
-  document.querySelectorAll(".keepsake.is-open").forEach((keepsake) => {
-    keepsake.classList.remove("is-open");
-    const button = keepsake.querySelector(".note-tab");
-    if (button) button.setAttribute("aria-expanded", "false");
-  });
-}
-
-function showScreen(target, options = {}) {
-  const { updateHash = true, focus = false } = options;
-
-  closeAllNotes();
-  closeDrawer(false);
-  closePhotoViewer(false);
-
-  if (target === "cover") {
-    memoryScreens.forEach((screen) => {
-      screen.hidden = true;
-      screen.classList.remove("is-active");
-    });
-    cover.hidden = false;
-    cover.classList.add("is-active");
-    currentScreen = "cover";
-    if (updateHash) history.replaceState(null, "", window.location.pathname + window.location.search);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    if (focus) openBoxButton.focus({ preventScroll: true });
-    return;
+  if (target.dataset.memory && progressPill) {
+    progressPill.textContent = `${target.dataset.memory} / 27`;
   }
 
-  const nextScreen = getMemoryScreen(target);
-  if (!nextScreen) return;
-
-  cover.hidden = true;
-  cover.classList.remove("is-active");
-
-  memoryScreens.forEach((screen) => {
-    const active = screen === nextScreen;
-    screen.hidden = !active;
-    screen.classList.toggle("is-active", active);
-  });
-
-  currentScreen = target;
-  if (updateHash) history.replaceState(null, "", `#memory-${target}`);
-  window.scrollTo({ top: 0, behavior: "smooth" });
-
-  if (focus) {
-    const firstControl = nextScreen.querySelector(".note-tab");
-    if (firstControl) firstControl.focus({ preventScroll: true });
+  if (id === 'cover') {
+    progressPill.textContent = '01 / 27';
   }
+
+  closeDrawer();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function showToast(message) {
-  window.clearTimeout(toastTimer);
-  toast.textContent = message;
-  toast.classList.add("is-visible");
-  toastTimer = window.setTimeout(() => toast.classList.remove("is-visible"), 1900);
+function toggleNote(screen) {
+  if (!screen) return;
+  const isOpen = screen.classList.toggle('note-open');
+  const toggle = screen.querySelector('[data-toggle-note]');
+  const note = screen.querySelector('.note-card');
+  if (toggle) toggle.setAttribute('aria-expanded', String(isOpen));
+  if (note) note.setAttribute('aria-hidden', String(!isOpen));
 }
 
 function openDrawer() {
-  lastFocus = document.activeElement;
-  drawer.classList.add("is-open");
-  drawer.setAttribute("aria-hidden", "false");
-  document.body.style.overflow = "hidden";
-  const closeButton = drawer.querySelector(".drawer-close");
-  if (closeButton) closeButton.focus({ preventScroll: true });
+  drawer.classList.add('open');
+  drawer.setAttribute('aria-hidden', 'false');
 }
 
-function closeDrawer(returnFocus = true) {
-  if (!drawer.classList.contains("is-open")) return;
-  drawer.classList.remove("is-open");
-  drawer.setAttribute("aria-hidden", "true");
-  document.body.style.overflow = "";
-  if (returnFocus && lastFocus instanceof HTMLElement) lastFocus.focus({ preventScroll: true });
+function closeDrawer() {
+  drawer.classList.remove('open');
+  drawer.setAttribute('aria-hidden', 'true');
 }
 
-function openPhotoViewer(src, alt) {
-  lastFocus = document.activeElement;
-  photoViewerImage.src = src;
-  photoViewerImage.alt = alt;
-  photoViewer.classList.add("is-open");
-  photoViewer.setAttribute("aria-hidden", "false");
-  document.body.style.overflow = "hidden";
-  const closeButton = photoViewer.querySelector(".photo-viewer-close");
-  if (closeButton) closeButton.focus({ preventScroll: true });
-}
+openBoxButton?.addEventListener('click', () => showScreen('memory-01'));
 
-function closePhotoViewer(returnFocus = true) {
-  if (!photoViewer.classList.contains("is-open")) return;
-  photoViewer.classList.remove("is-open");
-  photoViewer.setAttribute("aria-hidden", "true");
-  document.body.style.overflow = "";
-  window.setTimeout(() => {
-    photoViewerImage.src = "";
-    photoViewerImage.alt = "";
-  }, 220);
-  if (returnFocus && lastFocus instanceof HTMLElement) lastFocus.focus({ preventScroll: true });
-}
+drawerButton?.addEventListener('click', openDrawer);
+drawerCloseTargets.forEach((el) => el.addEventListener('click', closeDrawer));
 
-openBoxButton.addEventListener("click", () => showScreen("01", { focus: true }));
+memoryScreens.forEach((screen) => {
+  const toggle = screen.querySelector('[data-toggle-note]');
+  toggle?.addEventListener('click', () => toggleNote(screen));
+});
 
-document.querySelectorAll(".note-tab").forEach((button) => {
-  button.addEventListener("click", () => {
-    const keepsake = button.closest(".keepsake");
-    const willOpen = !keepsake.classList.contains("is-open");
-    keepsake.classList.toggle("is-open", willOpen);
-    button.setAttribute("aria-expanded", String(willOpen));
-
-    if (willOpen) {
-      window.setTimeout(() => {
-        const note = keepsake.querySelector(".memory-note");
-        if (note) note.scrollIntoView({ behavior: "smooth", block: "nearest" });
-      }, 220);
-    }
+jumpLinks.forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const id = link.dataset.jump;
+    if (!id) return;
+    event.preventDefault();
+    showScreen(id);
   });
 });
 
-document.querySelectorAll("[data-go]").forEach((button) => {
-  button.addEventListener("click", () => {
-    if (button.disabled) return;
-    const target = button.dataset.go;
-    showScreen(target, { focus: true });
-  });
-});
+let touchStartX = null;
+let touchStartY = null;
 
-drawerOpenButtons.forEach((button) => button.addEventListener("click", openDrawer));
-drawerCloseButtons.forEach((button) => button.addEventListener("click", () => closeDrawer(true)));
-
-photoViewerCloseButtons.forEach((button) => button.addEventListener("click", () => closePhotoViewer(true)));
-
-document.querySelectorAll(".photo-button").forEach((button) => {
-  button.addEventListener("click", (event) => {
-    if (event.target.closest(".doodle-button")) return;
-    openPhotoViewer(button.dataset.photo, button.dataset.photoAlt || "Enlarged photograph");
-  });
-});
-
-const sunButton = document.querySelector(".sun-button");
-if (sunButton) {
-  sunButton.addEventListener("click", (event) => {
-    event.stopPropagation();
-    sunButton.classList.toggle("is-played");
-    if (sunButton.classList.contains("is-played")) showToast("there it is - that brightness");
-  });
+function activeMemoryIndex() {
+  return memoryScreens.findIndex((screen) => screen.classList.contains('active'));
 }
 
-function goRelative(direction) {
-  if (currentScreen === "cover") {
-    if (direction > 0) showScreen("01", { focus: false });
-    return;
-  }
-
-  const current = Number.parseInt(currentScreen, 10);
-  if (!Number.isFinite(current)) return;
-
-  const next = current + direction;
-  if (next < 1) {
-    showScreen("cover", { focus: false });
-    return;
-  }
-
-  const target = String(next).padStart(2, "0");
-  if (getMemoryScreen(target)) {
-    showScreen(target, { focus: false });
-  } else if (direction > 0) {
-    showToast("the rest of the memory box is coming next");
-  }
-}
-
-function isInteractiveTarget(target) {
-  return Boolean(target.closest("button, a, input, textarea, select, .memory-note"));
-}
-
-document.addEventListener("touchstart", (event) => {
-  if (drawer.classList.contains("is-open") || photoViewer.classList.contains("is-open")) return;
-  if (event.touches.length !== 1 || isInteractiveTarget(event.target)) return;
-  touchStartX = event.touches[0].clientX;
-  touchStartY = event.touches[0].clientY;
+document.addEventListener('touchstart', (event) => {
+  const touch = event.changedTouches[0];
+  touchStartX = touch.clientX;
+  touchStartY = touch.clientY;
 }, { passive: true });
 
-document.addEventListener("touchend", (event) => {
-  if (!touchStartX && !touchStartY) return;
-  if (drawer.classList.contains("is-open") || photoViewer.classList.contains("is-open")) return;
-  if (event.changedTouches.length !== 1) return;
+document.addEventListener('touchend', (event) => {
+  if (touchStartX === null || touchStartY === null) return;
+  const touch = event.changedTouches[0];
+  const deltaX = touch.clientX - touchStartX;
+  const deltaY = touch.clientY - touchStartY;
 
-  const endX = event.changedTouches[0].clientX;
-  const endY = event.changedTouches[0].clientY;
-  const dx = endX - touchStartX;
-  const dy = endY - touchStartY;
-
-  touchStartX = 0;
-  touchStartY = 0;
-
-  if (Math.abs(dx) < 65 || Math.abs(dx) < Math.abs(dy) * 1.2) return;
-  goRelative(dx < 0 ? 1 : -1);
-}, { passive: true });
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    if (photoViewer.classList.contains("is-open")) {
-      closePhotoViewer(true);
-      return;
-    }
-    if (drawer.classList.contains("is-open")) {
-      closeDrawer(true);
-      return;
+  if (Math.abs(deltaX) > 70 && Math.abs(deltaY) < 60) {
+    const index = activeMemoryIndex();
+    if (index !== -1) {
+      if (deltaX < 0 && memoryScreens[index + 1]) {
+        showScreen(memoryScreens[index + 1].id);
+      } else if (deltaX > 0 && memoryScreens[index - 1]) {
+        showScreen(memoryScreens[index - 1].id);
+      }
     }
   }
 
-  const active = document.activeElement;
-  const editing = active && ["INPUT", "TEXTAREA", "SELECT"].includes(active.tagName);
-  if (editing || drawer.classList.contains("is-open") || photoViewer.classList.contains("is-open")) return;
+  touchStartX = null;
+  touchStartY = null;
+}, { passive: true });
 
-  if (event.key === "ArrowRight") goRelative(1);
-  if (event.key === "ArrowLeft") goRelative(-1);
-});
-
-const hashMatch = window.location.hash.match(/^#memory-(\d{2})$/);
-if (hashMatch && getMemoryScreen(hashMatch[1])) {
-  showScreen(hashMatch[1], { updateHash: false, focus: false });
-} else {
-  showScreen("cover", { updateHash: false, focus: false });
-}
+showScreen('cover');
