@@ -9,11 +9,7 @@ const jumpLinks = [...document.querySelectorAll('[data-jump]')];
 const finaleButton = document.querySelector('[data-finale-button]');
 const drawerLinks = [...document.querySelectorAll('.drawer-link[data-jump]')];
 const progressStorageKey = 'fiona-27-unlocked-v1';
-const firstHintStorageKey = 'fiona-27-first-note-hint-seen-v1';
 const firstNoteHint = document.getElementById('first-note-hint');
-let firstNoteHintSeen = (() => {
-  try { return localStorage.getItem(firstHintStorageKey) === '1'; } catch { return false; }
-})();
 let highestUnlocked = (() => {
   try {
     const saved = Number.parseInt(localStorage.getItem(progressStorageKey) || '0', 10);
@@ -24,7 +20,7 @@ let highestUnlocked = (() => {
 })();
 function updateFirstNoteHint(screen = document.querySelector('.memory-screen.active')) {
   if (!firstNoteHint) return;
-  const shouldShow = !firstNoteHintSeen && screen?.id === 'memory-01' && !screen.classList.contains('note-open');
+  const shouldShow = screen?.id === 'memory-01' && !screen.classList.contains('note-open');
   firstNoteHint.hidden = !shouldShow;
 }
 function updateDrawerLocks() {
@@ -86,10 +82,6 @@ function toggleNote(screen) {
   screen.querySelectorAll('[data-toggle-note]').forEach((toggle) => toggle.setAttribute('aria-expanded', String(isOpen)));
   const note = screen.querySelector('.tucked-note');
   if (note) note.setAttribute('aria-hidden', String(!isOpen));
-  if (screen.id === 'memory-01' && isOpen) {
-    firstNoteHintSeen = true;
-    try { localStorage.setItem(firstHintStorageKey, '1'); } catch {}
-  }
   updateFirstNoteHint(screen);
   if (!isOpen) screen.classList.remove('finale-revealed');
   syncFinaleBody(screen);
