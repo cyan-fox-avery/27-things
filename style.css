@@ -120,15 +120,9 @@ body.finale-revealed .star-field { opacity: .95; }
 .string-lights { position: absolute; z-index: 7; top: -14px; left: 50%; width: min(88vw, 640px); height: 42px; transform: translateX(-50%) rotate(-1deg); border-top: 2px solid rgba(196,135,156,.65); pointer-events: none; }
 .string-lights i { position: absolute; top: -5px; width: 12px; height: 18px; border-radius: 7px 7px 9px 9px; background: var(--accent); box-shadow: 0 0 13px rgba(196,135,156,.65); }
 .string-lights i:nth-child(1){left:5%;}.string-lights i:nth-child(2){left:20%;top:-1px}.string-lights i:nth-child(3){left:35%;top:3px}.string-lights i:nth-child(4){left:50%;top:5px}.string-lights i:nth-child(5){left:65%;top:3px}.string-lights i:nth-child(6){left:80%;top:-1px}.string-lights i:nth-child(7){left:94%;}
-.archive-stamp, .postcard-stamp, .salon-sticker, .degree-burst { position: absolute; z-index: 7; color: var(--accent-deep); background: rgba(251,247,242,.95); border: 2px solid var(--accent-deep); box-shadow: 0 7px 16px rgba(0,0,0,.16); pointer-events: none; }
-.archive-stamp { top: 18px; left: max(4%, calc(50% - 330px)); padding: 7px 10px; font-size: .72rem; font-weight: 700; letter-spacing: .08em; transform: rotate(-8deg); }
-.postcard-stamp { top: 12px; right: max(4%, calc(50% - 320px)); padding: 8px 11px; font-family: 'Cormorant Garamond',serif; font-size: 1.25rem; font-weight: 700; transform: rotate(7deg); }
+.salon-sticker, .degree-burst { position: absolute; z-index: 7; color: var(--accent-deep); background: rgba(251,247,242,.95); border: 2px solid var(--accent-deep); box-shadow: 0 7px 16px rgba(0,0,0,.16); pointer-events: none; }
 .salon-sticker { top: 12px; right: max(2%, calc(50% - 300px)); padding: 10px 12px; text-align:center; font-size:.68rem; font-weight:700; line-height:1.1; transform: rotate(8deg); }
 .degree-burst { top: 10px; right: max(2%, calc(50% - 300px)); width:76px; height:76px; border-radius:50%; display:grid; place-items:center; text-align:center; font-size:.68rem; font-weight:700; transform:rotate(9deg); }
-.fiona-doodles { position: absolute; z-index: 7; top: 18px; left: 50%; width: min(94vw, 660px); transform: translateX(-50%); pointer-events: none; }
-.fiona-doodles svg { position:absolute; width:72px; height:58px; fill:none; stroke:var(--accent); stroke-width:3; stroke-linecap:round; stroke-linejoin:round; filter:drop-shadow(0 4px 4px rgba(0,0,0,.16)); }
-.pig-doodle { left:0; transform:rotate(-7deg); }
-.hamster-doodle { right:0; transform:rotate(7deg); }
 .tarot-fan { position:absolute; z-index:2; top:10px; left:50%; width:340px; height:170px; transform:translateX(-50%); pointer-events:none; }
 .tarot-fan span { position:absolute; width:92px; height:142px; border:2px solid var(--accent); border-radius:9px; background:#2a2326; color:var(--accent); display:grid; place-items:center; font-family:'Cormorant Garamond',serif; font-size:2rem; }
 .tarot-fan span:nth-child(1){left:48px;transform:rotate(-14deg)}
@@ -140,6 +134,7 @@ body.finale-revealed .star-field { opacity: .95; }
 .memory-special-13.note-open .name-roll span { opacity:1; transform:translateY(0); }
 .memory-special-13.note-open .name-roll span:nth-child(1){transition-delay:180ms}.memory-special-13.note-open .name-roll span:nth-child(2){transition-delay:260ms}.memory-special-13.note-open .name-roll span:nth-child(3){transition-delay:340ms}.memory-special-13.note-open .name-roll span:nth-child(4){transition-delay:420ms}.memory-special-13.note-open .name-roll span:nth-child(5){transition-delay:500ms}.memory-special-13.note-open .name-roll span:nth-child(6){transition-delay:580ms}.memory-special-13.note-open .name-roll span:nth-child(7){transition-delay:660ms}
 .wish-candle { position:relative; display:flex; flex-direction:column; align-items:center; width:92px; height:150px; margin:6px auto 24px; color:var(--accent-deep); }
+.wish-candle--ending { margin-top:34px; margin-bottom:2px; }
 .wish-candle .candle-body { position:absolute; bottom:28px; width:24px; height:74px; border-radius:7px 7px 3px 3px; background:var(--accent); }
 .wish-candle .wick { position:absolute; bottom:100px; width:2px; height:13px; background:var(--ink); }
 .wish-candle .flame { position:absolute; bottom:112px; width:18px; height:27px; border-radius:55% 45% 55% 45%; background:var(--accent-deep); transform:rotate(45deg); transform-origin:center bottom; box-shadow:0 0 18px rgba(196,135,156,.55); transition:opacity 240ms ease, transform 240ms ease; }
@@ -147,20 +142,21 @@ body.finale-revealed .star-field { opacity: .95; }
 .wish-candle small { position:absolute; bottom:0; white-space:nowrap; font-size:.72rem; text-transform:uppercase; letter-spacing:.12em; font-weight:600; }
 .wish-candle.blown .flame { opacity:0; transform:rotate(45deg) scale(.2); }
 .wish-candle.blown .smoke { opacity:.55; }
-.reconnect-mark { position:relative; width:120px; height:20px; margin:2px auto 24px; }
-.reconnect-mark span { position:absolute; top:6px; width:50px; height:4px; border-radius:999px; background:var(--accent); transition:transform 800ms cubic-bezier(.2,.72,.22,1); }
-.reconnect-mark span:first-child { left:0; transform:translateX(-28px); }
-.reconnect-mark span:last-child { right:0; transform:translateX(28px); }
-.memory-special-22.note-open .reconnect-mark span:first-child { transform:translateX(8px); }
-.memory-special-22.note-open .reconnect-mark span:last-child { transform:translateX(-8px); }
-.memory-special-21 .polaroid::before, .memory-special-21 .polaroid::after { content:''; position:absolute; top:18px; bottom:62px; width:5px; background:repeating-linear-gradient(to bottom, rgba(35,31,32,.28) 0 7px, transparent 7px 14px); }
-.memory-special-21 .polaroid::before { left:3px; }
-.memory-special-21 .polaroid::after { right:3px; }
 .birthday-finale { display:flex; flex-direction:column; align-items:center; text-align:center; margin:32px auto 8px; padding:0 16px; border-top:1px solid rgba(166,109,130,.3); opacity:0; transform:translateY(14px); max-height:0; overflow:hidden; transition:opacity 700ms ease, transform 700ms ease, max-height 700ms ease, padding 700ms ease; }
 .birthday-finale span { font-family:'Cormorant Garamond',serif; font-size:2.1rem; color:var(--accent-deep); }
 .birthday-finale strong { font-family:'Cormorant Garamond',serif; font-size:3.5rem; line-height:.95; color:var(--ink); font-weight:600; }
 .birthday-finale i { margin-top:18px; color:var(--accent-deep); font-style:normal; font-size:1.5rem; }
 .memory-special-27.finale-revealed .birthday-finale { opacity:1; transform:translateY(0); max-height:260px; padding-top:28px; padding-bottom:18px; }
+
+.censored-word { display:inline-flex; align-items:baseline; white-space:nowrap; }
+.censor-bar { position:relative; display:inline-block; color:transparent; line-height:1; }
+.censor-bar::after { content:''; position:absolute; left:-.02em; right:-.02em; top:52%; height:.26em; background:#111; border-radius:1px; transform:translateY(-50%) rotate(-1deg); }
+.drawer-censor { position:relative; display:inline-block; color:transparent; }
+.drawer-censor::after { content:''; position:absolute; left:0; right:0; top:52%; height:.34em; background:var(--paper); border-radius:1px; transform:translateY(-50%); opacity:.88; }
+.sr-only { position:absolute !important; width:1px !important; height:1px !important; padding:0 !important; margin:-1px !important; overflow:hidden !important; clip:rect(0,0,0,0) !important; white-space:nowrap !important; border:0 !important; }
+.drawer-link.is-locked { grid-template-columns:44px; opacity:.48; cursor:default; }
+.drawer-link.is-locked em { display:none; }
+.drawer-link.is-locked span { color:var(--muted); }
 .drawer { position: fixed; inset: 0; z-index: 60; opacity: 0; pointer-events: none; transition: opacity 180ms ease; }
 .drawer.open { opacity:1; pointer-events:auto; }
 .drawer-backdrop { position:absolute; inset:0; background:rgba(10,9,10,.6); backdrop-filter:blur(4px); }
@@ -182,8 +178,7 @@ body.finale-revealed .star-field { opacity: .95; }
   .note-inner { padding:124px 22px 28px; } .note-inner h2 { font-size:clamp(2.75rem,11.5vw,4.35rem); } .note-inner .lede { font-size:clamp(1.7rem,7.6vw,2.2rem); }
   .note-inner p { font-size:1.04rem; line-height:1.68; } .note-inner .closing-line { font-size:clamp(1.9rem,9vw,2.7rem); }
   .memory-nav { margin-top:80px; } .memory-screen.note-open .memory-nav { margin-top:104px; } .memory-link { font-size:.98rem; }
-  .archive-stamp { left:2px; top:12px; } .postcard-stamp, .salon-sticker, .degree-burst { right:2px; }
-  .fiona-doodles { width:96vw; top:12px; } .fiona-doodles svg { width:62px; height:50px; }
+  .salon-sticker, .degree-burst { right:2px; }
   .tarot-fan { width:300px; } .tarot-fan span:nth-child(1){left:44px}.tarot-fan span:nth-child(2){left:105px}.tarot-fan span:nth-child(3){right:42px}
   .birthday-finale strong { font-size:3rem; }
 }

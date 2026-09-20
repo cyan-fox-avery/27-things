@@ -7,6 +7,34 @@ const drawerButton = document.getElementById('drawer-button');
 const drawerCloseTargets = [...document.querySelectorAll('[data-close-drawer]')];
 const jumpLinks = [...document.querySelectorAll('[data-jump]')];
 const finaleButton = document.querySelector('[data-finale-button]');
+const drawerLinks = [...document.querySelectorAll('.drawer-link[data-jump]')];
+const progressStorageKey = 'fiona-27-unlocked-v1';
+let highestUnlocked = (() => {
+  try {
+    const saved = Number.parseInt(localStorage.getItem(progressStorageKey) || '0', 10);
+    return Number.isFinite(saved) ? Math.max(0, Math.min(27, saved)) : 0;
+  } catch {
+    return 0;
+  }
+})();
+function updateDrawerLocks() {
+  drawerLinks.forEach((link) => {
+    const match = link.dataset.jump?.match(/memory-(\d{2})/);
+    if (!match) return;
+    const number = Number.parseInt(match[1], 10);
+    const locked = number > highestUnlocked;
+    link.classList.toggle('is-locked', locked);
+    link.setAttribute('aria-disabled', String(locked));
+    if (locked) link.setAttribute('tabindex', '-1');
+    else link.removeAttribute('tabindex');
+  });
+}
+function unlockMemory(number) {
+  if (!Number.isFinite(number) || number < 1 || number > 27 || number <= highestUnlocked) return;
+  highestUnlocked = number;
+  try { localStorage.setItem(progressStorageKey, String(highestUnlocked)); } catch {}
+  updateDrawerLocks();
+}
 function sizeNote(screen) {
   const note = screen?.querySelector('.tucked-note');
   if (!note) return;
@@ -32,6 +60,7 @@ function showScreen(id) {
   document.body.classList.remove('finale-mode', 'finale-revealed');
   target.classList.add('active');
   if (target.dataset.memory && target.dataset.memory !== '00') {
+    unlockMemory(Number.parseInt(target.dataset.memory, 10));
     progressPill.textContent = `${target.dataset.memory} / 27`;
     requestAnimationFrame(() => sizeNote(target));
   } else progressPill.textContent = '01 / 27';
@@ -54,7 +83,7 @@ openBoxButton?.addEventListener('click', () => showScreen('memory-01'));
 drawerButton?.addEventListener('click', openDrawer);
 drawerCloseTargets.forEach((el) => el.addEventListener('click', closeDrawer));
 memoryScreens.forEach((screen) => screen.querySelectorAll('[data-toggle-note]').forEach((toggle) => toggle.addEventListener('click', () => toggleNote(screen))));
-jumpLinks.forEach((link) => link.addEventListener('click', (event) => { const id = link.dataset.jump; if (!id) return; event.preventDefault(); showScreen(id); }));
+jumpLinks.forEach((link) => link.addEventListener('click', (event) => { const id = link.dataset.jump; if (!id) return; if (link.classList.contains('drawer-link') && link.classList.contains('is-locked')) { event.preventDefault(); return; } event.preventDefault(); showScreen(id); }));
 document.querySelectorAll('[data-wish-candle]').forEach((candle) => candle.addEventListener('click', (event) => { event.stopPropagation(); candle.classList.toggle('blown'); }));
 finaleButton?.addEventListener('click', () => {
   const screen = document.getElementById('memory-27');
@@ -81,4 +110,5 @@ document.addEventListener('touchend', (event) => {
   touchStartX = null; touchStartY = null;
 }, { passive: true });
 window.addEventListener('resize', () => { const active = document.querySelector('.memory-screen.active'); if (active) sizeNote(active); });
+updateDrawerLocks();
 showScreen('cover');
