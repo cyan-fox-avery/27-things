@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="27 Things About Fiona - an interactive birthday keepsake.">
+  <meta name="theme-color" content="#171415">
   <title>27 Things About Fiona</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,30 +12,45 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="star-field" aria-hidden="true"></div>
   <div class="site-shell">
     <header class="topbar">
-      <button class="drawer-button" id="drawer-button" aria-label="Open memory drawer">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="drawer-button" id="drawer-button" aria-label="Open memory drawer"><span></span><span></span><span></span></button>
       <div class="progress-pill" id="progress-pill">01 / 27</div>
     </header>
-
     <aside class="drawer" id="memory-drawer" aria-hidden="true">
       <div class="drawer-backdrop" data-close-drawer></div>
       <div class="drawer-panel">
-        <div class="drawer-panel-head">
-          <h2>Memory Drawer</h2>
-          <button class="drawer-close" data-close-drawer aria-label="Close memory drawer">×</button>
-        </div>
-        <nav class="drawer-list">
-          <a href="#memory-01" class="drawer-link" data-jump="memory-01"><span>01</span><em>You were born</em></a>
-          <a href="#memory-02" class="drawer-link" data-jump="memory-02"><span>02</span><em>You completed our family</em></a>
-          <a href="#memory-03" class="drawer-link" data-jump="memory-03"><span>03</span><em>You have always brought joy with you</em></a>
-          <div class="drawer-link drawer-link--muted"><span>04</span><em>coming next</em></div>
-        </nav>
+        <div class="drawer-panel-head"><h2>Memory Drawer</h2><button class="drawer-close" data-close-drawer aria-label="Close memory drawer">×</button></div>
+        <nav class="drawer-list"><a href="#memory-01" class="drawer-link" data-jump="memory-01"><span>01</span><em>You were born</em></a>
+<a href="#memory-02" class="drawer-link" data-jump="memory-02"><span>02</span><em>You completed our family</em></a>
+<a href="#memory-03" class="drawer-link" data-jump="memory-03"><span>03</span><em>You have always brought joy with you</em></a>
+<a href="#memory-04" class="drawer-link" data-jump="memory-04"><span>04</span><em>You’ve always been my birthday buddy</em></a>
+<a href="#memory-05" class="drawer-link" data-jump="memory-05"><span>05</span><em>You have always loved with your whole heart</em></a>
+<a href="#memory-06" class="drawer-link" data-jump="memory-06"><span>06</span><em>You have always had a style that is completely your own</em></a>
+<a href="#memory-07" class="drawer-link" data-jump="memory-07"><span>07</span><em>Tu as appris le français avec moi</em></a>
+<a href="#memory-08" class="drawer-link" data-jump="memory-08"><span>08</span><em>You made the middle of nowhere feel less lonely</em></a>
+<a href="#memory-09" class="drawer-link" data-jump="memory-09"><span>09</span><em>You have always made me laugh</em></a>
+<a href="#memory-10" class="drawer-link" data-jump="memory-10"><span>10</span><em>You kept Christmas magical</em></a>
+<a href="#memory-11" class="drawer-link" data-jump="memory-11"><span>11</span><em>You were cute even in your cringe era</em></a>
+<a href="#memory-12" class="drawer-link" data-jump="memory-12"><span>12</span><em>You grew up beside me</em></a>
+<a href="#memory-13" class="drawer-link" data-jump="memory-13"><span>13</span><em>You were number 7</em></a>
+<a href="#memory-14" class="drawer-link" data-jump="memory-14"><span>14</span><em>You drove me absolutely nuts</em></a>
+<a href="#memory-15" class="drawer-link" data-jump="memory-15"><span>15</span><em>You made Mexico memorable</em></a>
+<a href="#memory-16" class="drawer-link" data-jump="memory-16"><span>16</span><em>You carry the best of them, and something all your own</em></a>
+<a href="#memory-17" class="drawer-link" data-jump="memory-17"><span>17</span><em>You always kept me looking my best</em></a>
+<a href="#memory-18" class="drawer-link" data-jump="memory-18"><span>18</span><em>You made a wish</em></a>
+<a href="#memory-19" class="drawer-link" data-jump="memory-19"><span>19</span><em>You’ve always kept your head above water</em></a>
+<a href="#memory-20" class="drawer-link" data-jump="memory-20"><span>20</span><em>You have always been unmistakably you</em></a>
+<a href="#memory-21" class="drawer-link" data-jump="memory-21"><span>21</span><em>You are in all my best memories</em></a>
+<a href="#memory-22" class="drawer-link" data-jump="memory-22"><span>22</span><em>You found your way back to me</em></a>
+<a href="#memory-23" class="drawer-link" data-jump="memory-23"><span>23</span><em>You became the kind of teacher people remember</em></a>
+<a href="#memory-24" class="drawer-link" data-jump="memory-24"><span>24</span><em>You got a freaking master’s degree</em></a>
+<a href="#memory-25" class="drawer-link" data-jump="memory-25"><span>25</span><em>You made losing Dad survivable</em></a>
+<a href="#memory-26" class="drawer-link" data-jump="memory-26"><span>26</span><em>You fell in love</em></a>
+<a href="#memory-27" class="drawer-link" data-jump="memory-27"><span>27</span><em>You&#x27;re my sister</em></a></nav>
       </div>
     </aside>
-
     <main>
       <section class="cover screen active" id="cover" data-memory="00">
         <div class="cover-inner">
@@ -44,93 +60,687 @@
           <button class="open-box" id="open-box">open the box</button>
         </div>
       </section>
-
+      
       <section class="screen memory-screen" id="memory-01" data-memory="01">
         <div class="memory-wrap">
-          <div class="keepsake first-peek">
-            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory note">
-              <figure class="polaroid photo-portrait">
-                <img src="images/01.jpg" alt="A childhood photograph showing Avery holding newborn Fiona while Dad supports them.">
+          <div class="keepsake">
+            
+            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 1 note">
+              <figure class="polaroid photo-landscape ">
+                <img src="images/01.jpg" alt="A childhood photo of Avery holding newborn Fiona with Dad supporting them.">
                 <figcaption class="photo-number">01</figcaption>
               </figure>
             </button>
-
             <article class="tucked-note" aria-hidden="true">
-              <button class="note-handle" data-toggle-note aria-label="Close memory note"></button>
+              <button class="note-handle" data-toggle-note aria-label="Close memory 1 note"></button>
               <div class="note-inner">
                 <h2>You were born</h2>
-                <p class="lede">September 28, 1999. Exactly three years and four days after me.</p>
-                <p>The day you were born is probably my earliest memory. I don’t remember the hospital or the car ride, or much else about that day. But I remember sitting in a chair, my little feet dangling above the floor, while Dad carefully placed a small bundle in my arms. He kept holding you too, to make sure you were safe.</p>
-                <p>I don’t remember much, but I vividly remember holding you.</p>
-                <p>Ever since we were kids, I’ve thought of you as my favourite birthday present I ever got.</p>
+                <p class="lede">September 28, 1999. Exactly three years and four days after me.</p><p>The day you were born is probably my earliest memory. I don’t remember the hospital or the car ride, or much else about that day. But I remember sitting in a chair, my little feet dangling above the floor, while Dad carefully placed a small bundle in my arms. He kept holding you too, to make sure you were safe.</p><p>I don’t remember much, but I vividly remember holding you.</p><p>Ever since we were kids, I’ve thought of you as my favourite birthday present I ever got.</p>
+                
               </div>
             </article>
           </div>
-
           <nav class="memory-nav">
             <a href="#cover" class="memory-link memory-link--ghost" data-jump="cover">cover</a>
             <a href="#memory-02" class="memory-link" data-jump="memory-02">next memory</a>
           </nav>
         </div>
       </section>
-
       <section class="screen memory-screen" id="memory-02" data-memory="02">
         <div class="memory-wrap">
           <div class="keepsake">
-            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory note">
+            
+            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 2 note">
               <figure class="polaroid photo-landscape rotate-left">
                 <img src="images/02.jpg" alt="A family portrait of Dad, Mom, baby Fiona, and young Avery.">
                 <figcaption class="photo-number">02</figcaption>
               </figure>
             </button>
-
             <article class="tucked-note" aria-hidden="true">
-              <button class="note-handle" data-toggle-note aria-label="Close memory note"></button>
+              <button class="note-handle" data-toggle-note aria-label="Close memory 2 note"></button>
               <div class="note-inner">
                 <h2>You completed our family</h2>
-                <p>From day one, you belonged. Your arrival brought a balance to our family that I don’t quite know how to explain, except that it felt right with you there.</p>
-                <p>We wouldn’t have been the same Wilkinsons from the blue bungalow in rural Ontario without you. You helped make us who we were.</p>
-                <p class="closing-line">The four of us.</p>
+                <p>From day one, you belonged. Your arrival brought a balance to our family that I don’t quite know how to explain, except that it felt right with you there.</p><p>We wouldn’t have been the same Wilkinsons from the blue bungalow in rural Ontario without you. You helped make us who we were.</p><p class="closing-line">The four of us.</p>
+                
               </div>
             </article>
           </div>
-
           <nav class="memory-nav">
             <a href="#memory-01" class="memory-link memory-link--ghost" data-jump="memory-01">previous</a>
             <a href="#memory-03" class="memory-link" data-jump="memory-03">next memory</a>
           </nav>
         </div>
       </section>
-
       <section class="screen memory-screen" id="memory-03" data-memory="03">
         <div class="memory-wrap">
           <div class="keepsake">
-            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory note">
-              <figure class="polaroid photo-portrait rotate-right">
-                <img src="images/03.jpg" alt="A smiling baby photo of Fiona lying on patterned bedding.">
+            
+            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 3 note">
+              <figure class="polaroid photo-square rotate-right">
+                <img src="images/03.jpg" alt="A smiling baby Fiona lying on patterned bedding.">
                 <figcaption class="photo-number">03</figcaption>
               </figure>
             </button>
-
             <article class="tucked-note" aria-hidden="true">
-              <button class="note-handle" data-toggle-note aria-label="Close memory note"></button>
+              <button class="note-handle" data-toggle-note aria-label="Close memory 3 note"></button>
               <div class="note-inner">
                 <h2>You have always brought joy with you.</h2>
-                <p>You were such a happy baby. Not in the sense that you never cried or were somehow perfectly easy, but you were so often smiling. You had this naturally cheerful, positive presence that people could feel when you were in the room.</p>
-                <p>Looking back at photos of you from that time, I can still see it so clearly. That brightness was already there.</p>
+                <p>You were such a happy baby. Not in the sense that you never cried or were somehow perfectly easy, but you were so often smiling. You had this naturally cheerful, positive presence that people could feel when you were in the room.</p><p>Looking back at photos of you from that time, I can still see it so clearly. That brightness was already there.</p>
+                
               </div>
             </article>
           </div>
-
           <nav class="memory-nav">
             <a href="#memory-02" class="memory-link memory-link--ghost" data-jump="memory-02">previous</a>
-            <span class="memory-link memory-link--muted">04 coming next</span>
+            <a href="#memory-04" class="memory-link" data-jump="memory-04">next memory</a>
+          </nav>
+        </div>
+      </section>
+      <section class="screen memory-screen" id="memory-04" data-memory="04">
+        <div class="memory-wrap">
+          <div class="keepsake">
+            
+            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 4 note">
+              <figure class="polaroid photo-landscape ">
+                <img src="images/04.jpg" alt="A childhood birthday photo of Avery and Fiona beside a birthday cake.">
+                <figcaption class="photo-number">04</figcaption>
+              </figure>
+            </button>
+            <article class="tucked-note" aria-hidden="true">
+              <button class="note-handle" data-toggle-note aria-label="Close memory 4 note"></button>
+              <div class="note-inner">
+                <h2>You’ve always been my birthday buddy</h2>
+                <p>Growing up, having birthdays four days apart meant arguing over what kind of cake we’d share, who would come to the party, and who got to blow out the candles first. Very serious birthday business.</p><p>But for a long time now, sharing that little corner of September with you has felt like a blessing. It’s like stepping into the unknown of a new year of life with someone right there beside me.</p><p class="closing-line">If I could choose anyone in the world to be my birthday buddy, I’d choose you.</p>
+                
+              </div>
+            </article>
+          </div>
+          <nav class="memory-nav">
+            <a href="#memory-03" class="memory-link memory-link--ghost" data-jump="memory-03">previous</a>
+            <a href="#memory-05" class="memory-link" data-jump="memory-05">next memory</a>
+          </nav>
+        </div>
+      </section>
+      <section class="screen memory-screen" id="memory-05" data-memory="05">
+        <div class="memory-wrap">
+          <div class="keepsake">
+            
+            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 5 note">
+              <figure class="polaroid photo-square rotate-left">
+                <img src="images/05.jpg" alt="A childhood photo connected to Fiona’s very official backyard-pool romance era.">
+                <figcaption class="photo-number">05</figcaption>
+              </figure>
+            </button>
+            <article class="tucked-note" aria-hidden="true">
+              <button class="note-handle" data-toggle-note aria-label="Close memory 5 note"></button>
+              <div class="note-inner">
+                <h2>You have always loved with your whole heart.</h2>
+                <p>You have always worn your heart on your sleeve. Even when you were three, you were a little romantic, sweet and completely sincere about the people you loved. At the time, you actually had two boyfriends. One of them was Noah, the little boy in this photo. I still remember Noah’s big sister and me deciding that the two of you obviously needed to get married, so we held a very official, completely made-up wedding ceremony for you in their backyard pool.</p><p>You were such a funny, affectionate little kid, and that softness has always been part of you. You have never been someone who loves halfway.</p>
+                
+              </div>
+            </article>
+          </div>
+          <nav class="memory-nav">
+            <a href="#memory-04" class="memory-link memory-link--ghost" data-jump="memory-04">previous</a>
+            <a href="#memory-06" class="memory-link" data-jump="memory-06">next memory</a>
+          </nav>
+        </div>
+      </section>
+      <section class="screen memory-screen" id="memory-06" data-memory="06">
+        <div class="memory-wrap">
+          <div class="keepsake">
+            
+            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 6 note">
+              <figure class="polaroid photo-square rotate-right">
+                <img src="images/06.jpg" alt="Baby Fiona wearing a bright pink sunhat.">
+                <figcaption class="photo-number">06</figcaption>
+              </figure>
+            </button>
+            <article class="tucked-note" aria-hidden="true">
+              <button class="note-handle" data-toggle-note aria-label="Close memory 6 note"></button>
+              <div class="note-inner">
+                <h2>You have always had a style that is completely your own.</h2>
+                <p>You have always had such a strong sense of style. Even as a baby, apparently. You’ve always had your own look, your own aesthetic, and a way of making things feel distinctly you.</p><p>That has stayed true through every version of you, including the teenage years and some admittedly questionable contouring choices. 😂 But it has never felt like vanity. You just have this natural beauty about you, and a way of moving through the world with style and grace.</p>
+                
+              </div>
+            </article>
+          </div>
+          <nav class="memory-nav">
+            <a href="#memory-05" class="memory-link memory-link--ghost" data-jump="memory-05">previous</a>
+            <a href="#memory-07" class="memory-link" data-jump="memory-07">next memory</a>
+          </nav>
+        </div>
+      </section>
+      <section class="screen memory-screen" id="memory-07" data-memory="07">
+        <div class="memory-wrap">
+          <div class="keepsake">
+            
+            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 7 note">
+              <figure class="polaroid photo-landscape ">
+                <img src="images/07.jpg" alt="A childhood photo of Avery and Fiona reading together at the kitchen table.">
+                <figcaption class="photo-number">07</figcaption>
+              </figure>
+            </button>
+            <article class="tucked-note" aria-hidden="true">
+              <button class="note-handle" data-toggle-note aria-label="Close memory 7 note"></button>
+              <div class="note-inner">
+                <h2>Tu as appris le français avec moi.</h2>
+                <p>We were two kids from an English-speaking household put into fully French school. Dad could introduce himself in French with some difficulty, and Mom knew a little more, but whenever I needed help with my homework, I asked you.</p><p>We would read together, and you helped me a lot with my pronunciation. You were patient with me, corrected me when I got things wrong, and somehow never seemed to get annoyed when I struggled.</p><p>Even though you were younger than me and learning too, you were still the person I went to when I needed help.</p>
+                
+              </div>
+            </article>
+          </div>
+          <nav class="memory-nav">
+            <a href="#memory-06" class="memory-link memory-link--ghost" data-jump="memory-06">previous</a>
+            <a href="#memory-08" class="memory-link" data-jump="memory-08">next memory</a>
+          </nav>
+        </div>
+      </section>
+      <section class="screen memory-screen" id="memory-08" data-memory="08">
+        <div class="memory-wrap">
+          <div class="keepsake">
+            
+            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 8 note">
+              <figure class="polaroid photo-landscape ">
+                <img src="images/08.jpg" alt="A childhood photo of Fiona surrounded by books, toys, and blankets on the floor.">
+                <figcaption class="photo-number">08</figcaption>
+              </figure>
+            </button>
+            <article class="tucked-note" aria-hidden="true">
+              <button class="note-handle" data-toggle-note aria-label="Close memory 8 note"></button>
+              <div class="note-inner">
+                <h2>You made the middle of nowhere feel less lonely.</h2>
+                <p>We grew up pretty much in the middle of nowhere, which meant that when we were home, it was usually just the two of us. Before school, after school, on weekends, and through those endless summer days, we spent so much time together.</p><p>We read, played, watched things, made up games, annoyed each other, and generally found ways to fill the hours. I don’t think I really appreciated at the time how much company we were to each other. Home could have felt incredibly isolated, but I had you there.</p>
+                
+              </div>
+            </article>
+          </div>
+          <nav class="memory-nav">
+            <a href="#memory-07" class="memory-link memory-link--ghost" data-jump="memory-07">previous</a>
+            <a href="#memory-09" class="memory-link" data-jump="memory-09">next memory</a>
+          </nav>
+        </div>
+      </section>
+      <section class="screen memory-screen" id="memory-09" data-memory="09">
+        <div class="memory-wrap">
+          <div class="keepsake">
+            
+            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 9 note">
+              <figure class="polaroid photo-square rotate-left">
+                <img src="images/09.jpg" alt="A childhood photo of Fiona outside by a rustic building.">
+                <figcaption class="photo-number">09</figcaption>
+              </figure>
+            </button>
+            <article class="tucked-note" aria-hidden="true">
+              <button class="note-handle" data-toggle-note aria-label="Close memory 9 note"></button>
+              <div class="note-inner">
+                <h2>You have always made me laugh.</h2>
+                <p>You have always had this way of making things funnier just by being yourself. The faces, the reactions, the little comments, the way you commit completely to whatever bit you’re doing. You can be ridiculous in the best possible way.</p><p>Some of my favourite memories with you are funny for reasons that would probably make no sense to anyone else. Half the time, I don’t even remember the exact joke anymore. I just remember laughing with you until whatever we were doing became ten times funnier than it had any right to be.</p><p class="closing-line">You have always made me laugh, and I hope you never stop.</p>
+                
+              </div>
+            </article>
+          </div>
+          <nav class="memory-nav">
+            <a href="#memory-08" class="memory-link memory-link--ghost" data-jump="memory-08">previous</a>
+            <a href="#memory-10" class="memory-link" data-jump="memory-10">next memory</a>
+          </nav>
+        </div>
+      </section>
+      <section class="screen memory-screen memory-special-10" id="memory-10" data-memory="10">
+        <div class="memory-wrap">
+          <div class="keepsake">
+            <div class="string-lights" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 10 note">
+              <figure class="polaroid photo-square ">
+                <img src="images/10.jpg" alt="A Christmas photo of Avery and Fiona beside a decorated tree.">
+                <figcaption class="photo-number">10</figcaption>
+              </figure>
+            </button>
+            <article class="tucked-note" aria-hidden="true">
+              <button class="note-handle" data-toggle-note aria-label="Close memory 10 note"></button>
+              <div class="note-inner">
+                <h2>You kept Christmas magical.</h2>
+                <p>I figured out pretty young that Santa wasn’t real, and after that, part of Christmas became helping preserve the magic for you. You believed in it longer than I did, and honestly, I think that made Christmas more fun for me too.</p><p>You would wake us up at some completely unreasonable hour, usually around five in the morning, ready to open presents. I can still picture you kneeling beside the tree, practically vibrating with excitement next to the pile with your name on it, while we waited for Dad to get his coffee and Mom to get the camera.</p><p>One year we got a Wii and spent basically the entire day playing the boxing minigame. The next morning, on Boxing Day of all days, neither of us could move our arms because we were so sore.</p><p>You made Christmas feel like an event. Your excitement was contagious, and some of my favourite memories of the holidays are really memories of watching you enjoy them.</p>
+                
+              </div>
+            </article>
+          </div>
+          <nav class="memory-nav">
+            <a href="#memory-09" class="memory-link memory-link--ghost" data-jump="memory-09">previous</a>
+            <a href="#memory-11" class="memory-link" data-jump="memory-11">next memory</a>
+          </nav>
+        </div>
+      </section>
+      <section class="screen memory-screen memory-special-11" id="memory-11" data-memory="11">
+        <div class="memory-wrap">
+          <div class="keepsake">
+            <div class="archive-stamp" aria-hidden="true">ARCHIVE // CRINGE ERA</div>
+            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 11 note">
+              <figure class="polaroid photo-landscape rotate-right">
+                <img src="images/11.jpg" alt="A dramatically teenage photo from Fiona’s cringe-era archives.">
+                <figcaption class="photo-number">11</figcaption>
+              </figure>
+            </button>
+            <article class="tucked-note" aria-hidden="true">
+              <button class="note-handle" data-toggle-note aria-label="Close memory 11 note"></button>
+              <div class="note-inner">
+                <h2>You were cute even in your cringe era.</h2>
+                <p>We all have photos from those years that we might prefer stayed buried. Unfortunately for you, I’m your sibling, and I have access to the archives.</p><p>Please accept this photograph as evidence that even at your most dramatically teenage, you were still ridiculously cute.</p><p>And yes, I remember my fedora era. I’m in absolutely no position to judge, but I am in charge of the birthday slideshow.</p>
+                
+              </div>
+            </article>
+          </div>
+          <nav class="memory-nav">
+            <a href="#memory-10" class="memory-link memory-link--ghost" data-jump="memory-10">previous</a>
+            <a href="#memory-12" class="memory-link" data-jump="memory-12">next memory</a>
+          </nav>
+        </div>
+      </section>
+      <section class="screen memory-screen" id="memory-12" data-memory="12">
+        <div class="memory-wrap">
+          <div class="keepsake">
+            
+            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 12 note">
+              <figure class="polaroid photo-square rotate-left">
+                <img src="images/12.jpg" alt="A childhood photo of Avery and Fiona walking side by side with backpacks.">
+                <figcaption class="photo-number">12</figcaption>
+              </figure>
+            </button>
+            <article class="tucked-note" aria-hidden="true">
+              <button class="note-handle" data-toggle-note aria-label="Close memory 12 note"></button>
+              <div class="note-inner">
+                <h2>You grew up beside me.</h2>
+                <p>In so many ways, we have always been opposites. We are different in temperament, different in how we carry ourselves, different in how we move through the world. In some ways, we are almost night and day.</p><p>And yet, somehow, there has always been so much overlap too. We grew up side by side, sharing the same road, the same home, the same routines, the same milestones, and so much of the same history. We were never the same person, but we were always shaped by so many of the same places and moments.</p><p>I love this photo because it feels like such a perfect picture of that. The two of us are standing side by side, headed in the same direction, carrying different backpacks, already our own distinct little people. That has always been us.</p><p>You have never been my mirror. You have always been your own person. But I got to grow up beside you, and that has meant everything.</p>
+                
+              </div>
+            </article>
+          </div>
+          <nav class="memory-nav">
+            <a href="#memory-11" class="memory-link memory-link--ghost" data-jump="memory-11">previous</a>
+            <a href="#memory-13" class="memory-link" data-jump="memory-13">next memory</a>
+          </nav>
+        </div>
+      </section>
+      <section class="screen memory-screen memory-special-13" id="memory-13" data-memory="13">
+        <div class="memory-wrap">
+          <div class="keepsake">
+            
+            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 13 note">
+              <figure class="polaroid photo-portrait ">
+                <img src="images/13.jpg" alt="Fiona with Grandma.">
+                <figcaption class="photo-number">13</figcaption>
+              </figure>
+            </button>
+            <article class="tucked-note" aria-hidden="true">
+              <button class="note-handle" data-toggle-note aria-label="Close memory 13 note"></button>
+              <div class="note-inner">
+                <h2>You were number 7.</h2>
+                <p>Grandma had seven grandchildren, and sometimes she got our names mixed up. When she was trying to get to the right one, she would work her way through this whole family Rolodex:</p><p class="name-roll" aria-label="Deborah, Donna, Siobhan, Kelly, Tammy, Hannah, Fiona."><span>Deborah,</span><span>Donna,</span><span>Siobhan,</span><span>Kelly,</span><span>Tammy,</span><span>Hannah,</span><span>Fiona.</span></p><p>Eventually, it became easier to just think of us by number. I was number 6. You were number 7.</p><p>You were the youngest child of Grandma’s youngest child, and the youngest grandchild in the family. There was something fitting about you being the one at the end of the list, the last little piece added to that generation.</p><p>And somehow, even after Grandma had gone through everybody else first, eventually she always got to Fiona. 😂</p>
+                
+              </div>
+            </article>
+          </div>
+          <nav class="memory-nav">
+            <a href="#memory-12" class="memory-link memory-link--ghost" data-jump="memory-12">previous</a>
+            <a href="#memory-14" class="memory-link" data-jump="memory-14">next memory</a>
+          </nav>
+        </div>
+      </section>
+      <section class="screen memory-screen" id="memory-14" data-memory="14">
+        <div class="memory-wrap">
+          <div class="keepsake">
+            
+            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 14 note">
+              <figure class="polaroid photo-portrait rotate-right">
+                <img src="images/14.jpg" alt="A teenage selfie of Fiona and Avery.">
+                <figcaption class="photo-number">14</figcaption>
+              </figure>
+            </button>
+            <article class="tucked-note" aria-hidden="true">
+              <button class="note-handle" data-toggle-note aria-label="Close memory 14 note"></button>
+              <div class="note-inner">
+                <h2>You drove me absolutely nuts.</h2>
+                <p>For a while there, you took your responsibilities as the annoying younger sister very seriously. As teenagers, we could fight like wildcats. I’m sure you could give your own account of how delightful I was to live with.</p><p>But eventually, we always made things better. Sometimes it took time. We weren’t always ready to understand each other or let something go right away, but being angry with you never meant I stopped loving you.</p><p>You could drive me absolutely nuts and still be one of my favourite people. Apparently, both things can be true.</p>
+                
+              </div>
+            </article>
+          </div>
+          <nav class="memory-nav">
+            <a href="#memory-13" class="memory-link memory-link--ghost" data-jump="memory-13">previous</a>
+            <a href="#memory-15" class="memory-link" data-jump="memory-15">next memory</a>
+          </nav>
+        </div>
+      </section>
+      <section class="screen memory-screen memory-special-15" id="memory-15" data-memory="15">
+        <div class="memory-wrap">
+          <div class="keepsake">
+            <div class="postcard-stamp" aria-hidden="true">MÉXICO</div>
+            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 15 note">
+              <figure class="polaroid photo-square rotate-left">
+                <img src="images/15.jpg" alt="Fiona holding a small monkey during a family trip to Mexico.">
+                <figcaption class="photo-number">15</figcaption>
+              </figure>
+            </button>
+            <article class="tucked-note" aria-hidden="true">
+              <button class="note-handle" data-toggle-note aria-label="Close memory 15 note"></button>
+              <div class="note-inner">
+                <h2>You made Mexico memorable.</h2>
+                <p>From the cornrows on the beach, to the near-constant self-serve ice cream we both absolutely abused, to the peacock chasing you, to you running toward the ocean and immediately encountering a beach full of naked Europeans, some of my funniest memories from that trip are memories of being there with you.</p><p>This photo still makes me smile, not just because of the trip itself, but because of the story that came with it. You told me the monkey had peed on the woman who got her picture taken right before you, which somehow makes your calm little smile here even funnier.</p><p>You made the whole trip feel bigger, sillier and more memorable just by being there.</p>
+                
+              </div>
+            </article>
+          </div>
+          <nav class="memory-nav">
+            <a href="#memory-14" class="memory-link memory-link--ghost" data-jump="memory-14">previous</a>
+            <a href="#memory-16" class="memory-link" data-jump="memory-16">next memory</a>
+          </nav>
+        </div>
+      </section>
+      <section class="screen memory-screen" id="memory-16" data-memory="16">
+        <div class="memory-wrap">
+          <div class="keepsake">
+            
+            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 16 note">
+              <figure class="polaroid photo-landscape ">
+                <img src="images/16.jpg" alt="Fiona standing at the water’s edge at sunset.">
+                <figcaption class="photo-number">16</figcaption>
+              </figure>
+            </button>
+            <article class="tucked-note" aria-hidden="true">
+              <button class="note-handle" data-toggle-note aria-label="Close memory 16 note"></button>
+              <div class="note-inner">
+                <h2>You carry the best of them, and something all your own.</h2>
+                <p>I see so much of the best of Mom and Dad in you. Dad’s intelligence and wit. Mom’s charisma and kindness. Familiar pieces of the people we grew up with, coming together in you.</p><p>And then there’s your spirit. Something in the way you laugh, care about things, and throw yourself into life that is entirely your own. I don’t quite know how to put it into words, but I know it when I’m around you.</p><p>I recognize parts of them in you, but that particular spark is uniquely Fiona. And I love getting to see the world with you in it.</p>
+                
+              </div>
+            </article>
+          </div>
+          <nav class="memory-nav">
+            <a href="#memory-15" class="memory-link memory-link--ghost" data-jump="memory-15">previous</a>
+            <a href="#memory-17" class="memory-link" data-jump="memory-17">next memory</a>
+          </nav>
+        </div>
+      </section>
+      <section class="screen memory-screen memory-special-17" id="memory-17" data-memory="17">
+        <div class="memory-wrap">
+          <div class="keepsake">
+            <div class="salon-sticker" aria-hidden="true">FIONA'S<br>RATCHET<br>SALON</div>
+            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 17 note">
+              <figure class="polaroid photo-portrait rotate-right">
+                <img src="images/17.jpg" alt="A photo from Fiona’s Ratchet Salon years.">
+                <figcaption class="photo-number">17</figcaption>
+              </figure>
+            </button>
+            <article class="tucked-note" aria-hidden="true">
+              <button class="note-handle" data-toggle-note aria-label="Close memory 17 note"></button>
+              <div class="note-inner">
+                <h2>You always kept me looking my best.</h2>
+                <p>Fiona’s Ratchet Salon has been a staple of our years together. You did my makeup for big events, usually at Mom’s request, and somehow managed to make me look good every single time. You dyed my hair more than once too, and you were always completely on board with whatever ridiculous colour I had decided I needed next.</p><p>It was never really about makeup or hair, though. It was another one of those ways you looked after me. You had the patience and the skill to help me feel a little more confident walking out the door, without ever making me feel like I needed to be someone other than myself.</p>
+                
+              </div>
+            </article>
+          </div>
+          <nav class="memory-nav">
+            <a href="#memory-16" class="memory-link memory-link--ghost" data-jump="memory-16">previous</a>
+            <a href="#memory-18" class="memory-link" data-jump="memory-18">next memory</a>
+          </nav>
+        </div>
+      </section>
+      <section class="screen memory-screen memory-special-18" id="memory-18" data-memory="18">
+        <div class="memory-wrap">
+          <div class="keepsake">
+            
+            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 18 note">
+              <figure class="polaroid photo-landscape rotate-left">
+                <img src="images/18.jpg" alt="Young Fiona blowing out birthday candles.">
+                <figcaption class="photo-number">18</figcaption>
+              </figure>
+            </button>
+            <article class="tucked-note" aria-hidden="true">
+              <button class="note-handle" data-toggle-note aria-label="Close memory 18 note"></button>
+              <div class="note-inner">
+                <h2>You made a wish.</h2>
+                <p>I don’t know what you wished for when you blew out these candles. You weren’t supposed to tell, after all.</p><button class="wish-candle" data-wish-candle aria-label="Blow out the birthday candle"><span class="flame"></span><span class="wick"></span><span class="candle-body"></span><span class="smoke">〰</span><small>make a wish</small></button><p>But I hope at least a few of the wishes you made over the years came true. I hope some of the happiness you have now is the kind that little girl was wishing for.</p><p class="closing-line">And whatever you wish for when you blow out your candles this year, I’ll be quietly wishing it for you too.</p>
+                
+              </div>
+            </article>
+          </div>
+          <nav class="memory-nav">
+            <a href="#memory-17" class="memory-link memory-link--ghost" data-jump="memory-17">previous</a>
+            <a href="#memory-19" class="memory-link" data-jump="memory-19">next memory</a>
+          </nav>
+        </div>
+      </section>
+      <section class="screen memory-screen" id="memory-19" data-memory="19">
+        <div class="memory-wrap">
+          <div class="keepsake">
+            
+            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 19 note">
+              <figure class="polaroid photo-landscape ">
+                <img src="images/19.jpg" alt="Young Fiona smiling in a swimming pool wearing a life jacket.">
+                <figcaption class="photo-number">19</figcaption>
+              </figure>
+            </button>
+            <article class="tucked-note" aria-hidden="true">
+              <button class="note-handle" data-toggle-note aria-label="Close memory 19 note"></button>
+              <div class="note-inner">
+                <h2>You’ve always kept your head above water.</h2>
+                <p>You are genuinely one of the strongest people I know. Through good times and bad, you’ve found reasons to keep going, things to look forward to, and people to love.</p><p>I know enough of what you’ve been through to know that none of it has been effortless. That’s part of what makes me so proud of the life you’ve built, and so happy to see you enjoying it.</p><p>You’ve found ways to do more than survive. You’ve found ways to thrive. And I hope the years ahead give you more chances to enjoy the water, with less work just to stay afloat.</p>
+                
+              </div>
+            </article>
+          </div>
+          <nav class="memory-nav">
+            <a href="#memory-18" class="memory-link memory-link--ghost" data-jump="memory-18">previous</a>
+            <a href="#memory-20" class="memory-link" data-jump="memory-20">next memory</a>
+          </nav>
+        </div>
+      </section>
+      <section class="screen memory-screen memory-special-20" id="memory-20" data-memory="20">
+        <div class="memory-wrap">
+          <div class="keepsake">
+            <div class="fiona-doodles" aria-hidden="true">
+          <svg class="pig-doodle" viewBox="0 0 90 70"><path d="M19 35c0-15 12-26 29-26 16 0 29 10 29 25s-13 26-30 26S19 50 19 35Z"/><path d="M24 17 13 7l-2 20M69 17 80 8l1 20"/><ellipse cx="48" cy="39" rx="12" ry="9"/><circle cx="44" cy="39" r="1.5"/><circle cx="52" cy="39" r="1.5"/><circle cx="36" cy="30" r="2"/><circle cx="61" cy="30" r="2"/></svg>
+          <svg class="hamster-doodle" viewBox="0 0 90 70"><path d="M23 39c0-16 10-28 25-28s25 12 25 28c0 14-10 23-25 23S23 53 23 39Z"/><circle cx="31" cy="17" r="8"/><circle cx="65" cy="17" r="8"/><circle cx="39" cy="34" r="2"/><circle cx="57" cy="34" r="2"/><path d="M44 42q4 4 8 0M48 39v5"/></svg>
+        </div>
+            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 20 note">
+              <figure class="polaroid photo-square rotate-right">
+                <img src="images/20.jpg" alt="A recent portrait of Fiona outdoors.">
+                <figcaption class="photo-number">20</figcaption>
+              </figure>
+            </button>
+            <article class="tucked-note" aria-hidden="true">
+              <button class="note-handle" data-toggle-note aria-label="Close memory 20 note"></button>
+              <div class="note-inner">
+                <h2>You have always been unmistakably you.</h2>
+                <p>You have always had such a strong sense of who you are. Your own tastes, your own obsessions, your own little quirks, and a personality that has always been completely recognizable as you.</p><p>Because of you, I know way more One Direction and Justin Bieber songs than I ever intended to. You have always loved pink. You loved pigs. You had Pookie the hamster. You had that little gap between your teeth before braces. And then there was the deeply suspicious occasion when we found tiny bite marks in the butter.</p><p>All of those little things are so specific to you that even years later, they still instantly bring you to mind.</p><p>You have changed and grown so much over the years, but somehow you have always remained unmistakably Fiona. The older you get, the more you you seem to become.</p>
+                
+              </div>
+            </article>
+          </div>
+          <nav class="memory-nav">
+            <a href="#memory-19" class="memory-link memory-link--ghost" data-jump="memory-19">previous</a>
+            <a href="#memory-21" class="memory-link" data-jump="memory-21">next memory</a>
+          </nav>
+        </div>
+      </section>
+      <section class="screen memory-screen memory-special-21" id="memory-21" data-memory="21">
+        <div class="memory-wrap">
+          <div class="keepsake">
+            
+            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 21 note">
+              <figure class="polaroid photo-landscape rotate-left">
+                <img src="images/21.jpg" alt="A childhood holiday photo of Avery and Fiona together.">
+                <figcaption class="photo-number">21</figcaption>
+              </figure>
+            </button>
+            <article class="tucked-note" aria-hidden="true">
+              <button class="note-handle" data-toggle-note aria-label="Close memory 21 note"></button>
+              <div class="note-inner">
+                <h2>You are in all my best memories.</h2>
+                <p>When I look back at the happiest parts of my childhood, you are almost always there somewhere.</p><p>In old photos, in holidays, in ordinary afternoons, in ridiculous little moments that somehow became permanent memories, you are such a constant presence. Some of my favourite memories are not even really about anything important. They are just memories of being happy, and you happen to be there beside me.</p><p>I think that is one of the reasons so many of those memories still feel warm to me. You are woven through so much of the best of my past.</p>
+                
+              </div>
+            </article>
+          </div>
+          <nav class="memory-nav">
+            <a href="#memory-20" class="memory-link memory-link--ghost" data-jump="memory-20">previous</a>
+            <a href="#memory-22" class="memory-link" data-jump="memory-22">next memory</a>
+          </nav>
+        </div>
+      </section>
+      <section class="screen memory-screen memory-special-22" id="memory-22" data-memory="22">
+        <div class="memory-wrap">
+          <div class="keepsake">
+            
+            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 22 note">
+              <figure class="polaroid photo-square rotate-right">
+                <img src="images/22.jpg" alt="An adult selfie of Avery and Fiona together.">
+                <figcaption class="photo-number">22</figcaption>
+              </figure>
+            </button>
+            <article class="tucked-note" aria-hidden="true">
+              <button class="note-handle" data-toggle-note aria-label="Close memory 22 note"></button>
+              <div class="note-inner">
+                <h2>You found your way back to me.</h2>
+                <p>There were years when we weren’t close. We missed pieces of each other’s lives, and there is no way to go back and recover that time.</p><p class="closing-line">But somehow, we found each other again.</p><div class="reconnect-mark" aria-hidden="true"><span></span><span></span></div><p>Getting to know you again as adults has been one of the greatest gifts of my life. You weren’t just the little sister I remembered, and I wasn’t the same person you had known either. We both had years of growing and changing behind us. In a way, we had to meet each other again.</p><p class="closing-line">And we did.</p><p>Slowly, through conversations, stupid pictures, little updates, jokes, and all the ordinary things that rebuild familiarity, you became part of my everyday life again. Not because we were trying to recreate exactly what we had as kids, but because we were building something new between the people we had become.</p><p>I will always wish we hadn’t lost those years. But I am so grateful that losing time didn’t mean losing you forever.</p>
+                
+              </div>
+            </article>
+          </div>
+          <nav class="memory-nav">
+            <a href="#memory-21" class="memory-link memory-link--ghost" data-jump="memory-21">previous</a>
+            <a href="#memory-23" class="memory-link" data-jump="memory-23">next memory</a>
+          </nav>
+        </div>
+      </section>
+      <section class="screen memory-screen" id="memory-23" data-memory="23">
+        <div class="memory-wrap">
+          <div class="keepsake">
+            
+            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 23 note">
+              <figure class="polaroid photo-landscape ">
+                <img src="images/23.jpg" alt="A school staff graphic introducing Fiona as a resource teacher.">
+                <figcaption class="photo-number">23</figcaption>
+              </figure>
+            </button>
+            <article class="tucked-note" aria-hidden="true">
+              <button class="note-handle" data-toggle-note aria-label="Close memory 23 note"></button>
+              <div class="note-inner">
+                <h2>You became the kind of teacher people remember.</h2>
+                <p>You don’t just teach because it’s your job. You genuinely care about your students.</p><p>Having a smaller class means you get the chance to know them more deeply, and you actually take that opportunity. You learn who they are, what they struggle with, what they need, and what might help something finally click for them. You want them to succeed because you care about them, not just about whether they pass.</p><p>I know how much work you put into creating things for your students, finding different ways to teach something when one approach isn’t working, and trying to make your classroom a place where they feel supported and capable.</p><p>There are teachers people forget almost as soon as they leave their classroom, and then there are teachers whose names they still remember years later because that person made them feel seen.</p><p>I think you’re going to be one of those teachers.</p>
+                
+              </div>
+            </article>
+          </div>
+          <nav class="memory-nav">
+            <a href="#memory-22" class="memory-link memory-link--ghost" data-jump="memory-22">previous</a>
+            <a href="#memory-24" class="memory-link" data-jump="memory-24">next memory</a>
+          </nav>
+        </div>
+      </section>
+      <section class="screen memory-screen memory-special-24" id="memory-24" data-memory="24">
+        <div class="memory-wrap">
+          <div class="keepsake">
+            <div class="degree-burst" aria-hidden="true">MASTER'S!</div>
+            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 24 note">
+              <figure class="polaroid photo-portrait rotate-left">
+                <img src="images/24.jpg" alt="Fiona in graduation regalia holding her degree.">
+                <figcaption class="photo-number">24</figcaption>
+              </figure>
+            </button>
+            <article class="tucked-note" aria-hidden="true">
+              <button class="note-handle" data-toggle-note aria-label="Close memory 24 note"></button>
+              <div class="note-inner">
+                <h2>You got a freaking master’s degree.</h2>
+                <p class="lede">Seriously. A master’s degree.</p><p>You became the first person in our family to earn one, and I will never stop being ridiculously proud of you for that. I know how much work it took to get there, and I also know you did it while carrying a life that has not always made things easy for you.</p><p>After all the difficult shit life handed you, you still kept going. You kept learning, kept working, kept building a future for yourself, and became such an amazing and accomplished person.</p><p>When I look at this picture, all I can think is: look what you freaking did.</p><p class="closing-line">You earned that degree. You built that life. And nobody can ever take that away from you.</p>
+                
+              </div>
+            </article>
+          </div>
+          <nav class="memory-nav">
+            <a href="#memory-23" class="memory-link memory-link--ghost" data-jump="memory-23">previous</a>
+            <a href="#memory-25" class="memory-link" data-jump="memory-25">next memory</a>
+          </nav>
+        </div>
+      </section>
+      <section class="screen memory-screen" id="memory-25" data-memory="25">
+        <div class="memory-wrap">
+          <div class="keepsake">
+            
+            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 25 note">
+              <figure class="polaroid photo-landscape ">
+                <img src="images/25.jpg" alt="A family portrait of Avery, Fiona, and Dad.">
+                <figcaption class="photo-number">25</figcaption>
+              </figure>
+            </button>
+            <article class="tucked-note" aria-hidden="true">
+              <button class="note-handle" data-toggle-note aria-label="Close memory 25 note"></button>
+              <div class="note-inner">
+                <h2>You made losing Dad survivable.</h2>
+                <p>There is nothing good I can say about losing Dad. I wish with all my heart that you had never had to experience a loss like that, especially when you were only nine years old.</p><p>But after he died, we became incredibly close. We were both hurting, both trying to understand how our lives could possibly keep going without him, and somehow we started taking care of each other.</p><p>Neither of us could fix what had happened. We were just kids, and we were grieving in our own ways. But we had each other. We kept each other company, looked out for each other, and became a kind of safe place for one another during the worst time of our lives.</p><p class="closing-line">Losing Dad was unbearable. Having you beside me made it survivable.</p>
+                
+              </div>
+            </article>
+          </div>
+          <nav class="memory-nav">
+            <a href="#memory-24" class="memory-link memory-link--ghost" data-jump="memory-24">previous</a>
+            <a href="#memory-26" class="memory-link" data-jump="memory-26">next memory</a>
+          </nav>
+        </div>
+      </section>
+      <section class="screen memory-screen memory-special-26" id="memory-26" data-memory="26">
+        <div class="memory-wrap">
+          <div class="keepsake">
+            <div class="tarot-fan" aria-hidden="true"><span>✦</span><span>♡</span><span>☾</span></div>
+            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 26 note">
+              <figure class="polaroid photo-portrait rotate-right">
+                <img src="images/26.jpg" alt="A black-and-white wedding photo of Fiona and Ben.">
+                <figcaption class="photo-number">26</figcaption>
+              </figure>
+            </button>
+            <article class="tucked-note" aria-hidden="true">
+              <button class="note-handle" data-toggle-note aria-label="Close memory 26 note"></button>
+              <div class="note-inner">
+                <h2>You fell in love</h2>
+                <p>I remember when you were still waiting for your person. You’d pull tarot cards, looking for a little glimpse of when love might find you. I wished it for you with everything I had. My kind, beautiful, intelligent sister deserved someone who would see everything she was and treasure her.</p><p class="closing-line">Then came Ben.</p><p>Now you have someone who treats you like a queen, and I have an amazing brother-in-law. You deserve the happiness you’ve found. Seeing you loved like this makes me happier than I can write about without crying a little.</p><p class="closing-line">And yes, I’m crying a little.</p>
+                
+              </div>
+            </article>
+          </div>
+          <nav class="memory-nav">
+            <a href="#memory-25" class="memory-link memory-link--ghost" data-jump="memory-25">previous</a>
+            <a href="#memory-27" class="memory-link" data-jump="memory-27">next memory</a>
+          </nav>
+        </div>
+      </section>
+      <section class="screen memory-screen memory-special-27" id="memory-27" data-memory="27">
+        <div class="memory-wrap">
+          <div class="keepsake">
+            
+            <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 27 note">
+              <figure class="polaroid photo-landscape ">
+                <img src="images/27.jpg" alt="A recent selfie of Fiona and Avery together in a car.">
+                <figcaption class="photo-number">27</figcaption>
+              </figure>
+            </button>
+            <article class="tucked-note" aria-hidden="true">
+              <button class="note-handle" data-toggle-note aria-label="Close memory 27 note"></button>
+              <div class="note-inner">
+                <h2>You&#x27;re my sister.</h2>
+                <p>You’re my person. I have looked up to you for as long as I can remember, even though you’re younger than me.</p><p>Growing up, before I understood why the world so often felt confusing to me, I watched you. You seemed to know how to move through it in ways that I didn’t yet understand. You gave me an example to follow when I desperately needed one. I learned from you, sometimes without either of us realizing that was what was happening.</p><p>And I still look up to you now. I look at the way you treat people, the way you teach, the way you love, and the care you put into the person you are. You have this combination of kindness, strength, humour and grace that I have admired in every version of you. Knowing you has made me a better person, not because you ever set out to teach me how to be one, but because loving you gave me someone worth aspiring to be more like.</p><p class="universe-line">There are billions of people in this world who could know you, love you, learn from you, laugh with you and be changed by knowing you. But somehow, out of everyone in the universe, I’m the one who gets to call you my sister.</p><p class="closing-line">I don’t think I will ever stop being grateful for that.</p>
+                <div class="birthday-finale" aria-hidden="true"><span>Happy 27th,</span><strong>birthday buddy.</strong><i>✦</i></div>
+              </div>
+            </article>
+          </div>
+          <nav class="memory-nav">
+            <a href="#memory-26" class="memory-link memory-link--ghost" data-jump="memory-26">previous</a>
+            <button class="memory-link finale-button" data-finale-button>one more thing</button>
           </nav>
         </div>
       </section>
     </main>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
