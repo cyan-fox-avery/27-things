@@ -109,8 +109,8 @@ body.finale-revealed .star-field { opacity: .95; }
 .note-inner .lede, .note-inner .closing-line { font-family: 'Cormorant Garamond', serif; color: var(--accent-deep); }
 .note-inner .lede { margin: 0 0 18px; font-size: clamp(1.8rem, 4.5vw, 2.5rem); line-height: 1.12; }
 .note-inner p { margin: 0 0 18px; font-size: 1.16rem; line-height: 1.78; color: var(--ink); }
-.first-note-hint { margin: 14px auto -8px; width: fit-content; max-width: min(82vw, 420px); padding: 10px 14px; border-radius: 999px; background: rgba(251,247,242,.94); border: 1px solid rgba(198,164,178,.38); color: var(--accent-deep); font-size: .95rem; line-height: 1.35; text-align: center; box-shadow: 0 10px 22px rgba(0,0,0,.14); }
-.first-note-hint[hidden] { display: none !important; }
+.first-note-hint { position:absolute; z-index:4; left:50%; bottom:18px; transform:translateX(-50%); width:max-content; max-width:82%; color:var(--accent-deep); font-size:.88rem; font-weight:500; line-height:1.2; text-align:center; letter-spacing:.01em; pointer-events:none; }
+.first-note-hint[hidden] { display:none !important; }
 .note-inner .closing-line { margin: 8px 0 18px; font-size: clamp(2.05rem, 5.4vw, 3rem); line-height: 1.08; }
 .note-inner .universe-line { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.55rem, 4vw, 2rem); line-height: 1.35; }
 .memory-nav { display: flex; justify-content: space-between; align-items: center; gap: 18px; margin-top: 86px; padding: 0 6px 8px; }
@@ -178,7 +178,7 @@ body.finale-revealed .star-field { opacity: .95; }
   .screen { min-height:calc(100vh - 90px); padding-top:10px; } .cover-inner { margin-top:7vh; padding:36px 22px; } .polaroid { padding:10px 10px 54px; }
   .photo-landscape { width:min(88vw,560px); } .photo-portrait { width:min(80vw,460px); } .photo-square { width:min(84vw,500px); }
   .tucked-note { width:min(92vw,680px); max-height:90px; margin-top:-72px; } .note-handle { left:0; width:100%; height:142px; } .note-handle::after { bottom:17px; width:70px; }
-  .note-inner { padding:124px 22px 28px; } .note-inner h2 { font-size:clamp(2.75rem,11.5vw,4.35rem); } .note-inner .lede { font-size:clamp(1.7rem,7.6vw,2.2rem); }
+  .note-inner { padding:124px 22px 28px; } .first-note-hint { bottom:17px; max-width:88%; font-size:.84rem; } .note-inner h2 { font-size:clamp(2.75rem,11.5vw,4.35rem); } .note-inner .lede { font-size:clamp(1.7rem,7.6vw,2.2rem); }
   .note-inner p { font-size:1.04rem; line-height:1.68; } .note-inner .closing-line { font-size:clamp(1.9rem,9vw,2.7rem); }
   .memory-nav { margin-top:80px; } .memory-screen.note-open .memory-nav { margin-top:104px; } .memory-link { font-size:.98rem; }
   .salon-sticker, .degree-burst { right:2px; }
