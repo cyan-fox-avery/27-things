@@ -16,7 +16,12 @@
   <div class="site-shell">
     <header class="topbar">
       <button class="drawer-button" id="drawer-button" aria-label="Open memory drawer"><span></span><span></span><span></span></button>
-      <div class="progress-pill" id="progress-pill">01 / 27</div>
+      <div class="topbar-actions">
+        <button class="music-toggle" id="music-toggle" type="button" aria-label="Play background music" aria-pressed="false">
+          <span class="music-note" aria-hidden="true">♪</span><span class="music-status-dot" aria-hidden="true"></span>
+        </button>
+        <div class="progress-pill" id="progress-pill">01 / 27</div>
+      </div>
     </header>
     <aside class="drawer" id="memory-drawer" aria-hidden="true">
       <div class="drawer-backdrop" data-close-drawer></div>
@@ -56,7 +61,7 @@
         <div class="cover-inner">
           <p class="cover-kicker">for Fiona</p>
           <h1>27 things</h1>
-          <p class="cover-subtitle">a birthday keepsake made of memories</p>
+          <p class="cover-subtitle">a digital memory box</p>
           <button class="open-box" id="open-box">open the box</button>
         </div>
       </section>
@@ -290,7 +295,6 @@
       <section class="screen memory-screen memory-special-10" id="memory-10" data-memory="10">
         <div class="memory-wrap">
           <div class="keepsake">
-            <div class="string-lights" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
             <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 10 note">
               <figure class="polaroid photo-square ">
                 <img src="images/10.jpg" alt="A Christmas photo of Avery and Fiona beside a decorated tree.">
@@ -375,7 +379,7 @@
               <button class="note-handle" data-toggle-note aria-label="Close memory 13 note"></button>
               <div class="note-inner">
                 <h2>You were number 7.</h2>
-                <p>Grandma had seven grandchildren, and sometimes she got our names mixed up. When she was trying to get to the right one, she would work her way through this whole family Rolodex:</p><p class="name-roll" aria-label="Deborah, Donna, Siobhan, Kelly, Tammy, Hannah, Fiona."><span>Deborah,</span><span>Donna,</span><span>Siobhan,</span><span>Kelly,</span><span>Tammy,</span><span>Hannah,</span><span>Fiona.</span></p><p>Eventually, it became easier to just think of us by number. I was number 6. You were number 7.</p><p>You were the youngest child of Grandma’s youngest child, and the youngest grandchild in the family. There was something fitting about you being the one at the end of the list, the last little piece added to that generation.</p><p>And somehow, even after Grandma had gone through everybody else first, eventually she always got to Fiona. 😂</p>
+                <p>Grandma had seven grandchildren, and sometimes she got our names mixed up. When she was trying to get to the right one, she would work her way through this whole family Rolodex:</p><p class="name-roll" data-name-roll aria-label="Deborah, Donna, Siobhan, Kelly, Tammy, Hannah, Fiona."><span class="name-roll-list" aria-hidden="true"><span class="name-roll-name">Deborah,</span><span class="name-roll-name">Donna,</span><span class="name-roll-name">Siobhan,</span><span class="name-roll-name">Kelly,</span><span class="name-roll-name">Tammy,</span><span class="name-roll-name">Hannah,</span><span class="name-roll-name name-roll-name--final">Fiona.</span></span><span class="sr-only">Deborah, Donna, Siobhan, Kelly, Tammy, Hannah, Fiona.</span></p><p>Eventually, it became easier to just think of us by number. I was number 6. You were number 7.</p><p>You were the youngest child of Grandma’s youngest child, and the youngest grandchild in the family. There was something fitting about you being the one at the end of the list, the last little piece added to that generation.</p><p>And somehow, even after Grandma had gone through everybody else first, eventually she always got to Fiona. 😂</p>
                 
               </div>
             </article>
@@ -599,6 +603,22 @@
               <div class="note-inner">
                 <h2>You found your way back to me.</h2>
                 <p>There were years when we weren’t close. We missed pieces of each other’s lives, and there is no way to go back and recover that time.</p><p class="closing-line">But somehow, we found each other again.</p><p>Getting to know you again as adults has been one of the greatest gifts of my life. You weren’t just the little sister I remembered, and I wasn’t the same person you had known either. We both had years of growing and changing behind us. In a way, we had to meet each other again.</p><p class="closing-line">And we did.</p><p>Slowly, through conversations, stupid pictures, little updates, jokes, and all the ordinary things that rebuild familiarity, you became part of my everyday life again. Not because we were trying to recreate exactly what we had as kids, but because we were building something new between the people we had become.</p><p>I will always wish we hadn’t lost those years. But I am so grateful that losing time didn’t mean losing you forever.</p>
+                <div class="reconnect-thread" data-reconnect-thread>
+                  <div class="thread-stage" data-thread-stage>
+                    <svg class="thread-drawing" viewBox="0 0 360 126" aria-hidden="true" preserveAspectRatio="none">
+                      <path class="thread-path thread-path-left" data-thread-left d="M 8 83 C 60 30, 105 104, 116 63"></path>
+                      <path class="thread-path thread-path-right" data-thread-right d="M 352 80 C 300 116, 274 26, 250 63"></path>
+                      <g class="thread-finished" data-thread-finished>
+                        <path class="thread-path" d="M 8 83 C 66 28, 122 102, 174 63"></path>
+                        <path class="thread-path" d="M 352 80 C 298 116, 244 26, 186 63"></path>
+                        <path class="thread-bow" d="M 180 63 C 151 38, 146 51, 178 64 C 211 39, 216 52, 182 64 C 173 75, 169 88, 162 101 M 182 64 C 189 76, 195 89, 203 101"></path>
+                      </g>
+                    </svg>
+                    <button class="thread-end thread-end--move" type="button" data-thread-move aria-label="Drag this thread end toward the other"></button>
+                    <span class="thread-end thread-end--target" data-thread-target aria-hidden="true"></span>
+                    <button class="thread-accessible-tie" type="button" data-thread-tie>tie the thread</button>
+                  </div>
+                </div>
                 
               </div>
             </article>
@@ -647,7 +667,7 @@
             <article class="tucked-note" aria-hidden="true">
               <button class="note-handle" data-toggle-note aria-label="Close memory 24 note"></button>
               <div class="note-inner">
-                <h2>You got a <span class="censored-word" aria-label="fucking"><span aria-hidden="true">f</span><span class="censor-bar" aria-hidden="true">uck</span><span aria-hidden="true">ing</span></span> master’s degree.</h2>
+                <h2>You got a <button class="censored-word" type="button" data-censor-toggle aria-label="Reveal the censored word" aria-pressed="false"><span aria-hidden="true">f</span><span class="censor-bar" aria-hidden="true">uck</span><span aria-hidden="true">ing</span><span class="sr-only">fucking</span></button> master’s degree.</h2>
                 <p class="lede">Seriously. A master’s degree.</p><p>You became the first person in our family to earn one, and I will never stop being ridiculously proud of you for that. I know how much work it took to get there, and I also know you did it while carrying a life that has not always made things easy for you.</p><p>After all the difficult shit life handed you, you still kept going. You kept learning, kept working, kept building a future for yourself, and became such an amazing and accomplished person.</p><p>When I look at this picture, all I can think is: look what you freaking did.</p><p class="closing-line">You earned that degree. You built that life. And nobody can ever take that away from you.</p>
                 
               </div>
@@ -687,7 +707,6 @@
       <section class="screen memory-screen memory-special-26" id="memory-26" data-memory="26">
         <div class="memory-wrap">
           <div class="keepsake">
-            <div class="tarot-fan" aria-hidden="true"><span>✦</span><span>♡</span><span>☾</span></div>
             <button class="photo-button" data-toggle-note aria-expanded="false" aria-label="Open memory 26 note">
               <figure class="polaroid photo-portrait rotate-right">
                 <img src="images/26.jpg" alt="A black-and-white wedding photo of Fiona and Ben.">
@@ -699,6 +718,47 @@
               <div class="note-inner">
                 <h2>You fell in love</h2>
                 <p>I remember when you were still waiting for your person. You’d pull tarot cards, looking for a little glimpse of when love might find you. I wished it for you with everything I had. My kind, beautiful, intelligent sister deserved someone who would see everything she was and treasure her.</p><p class="closing-line">Then came Ben.</p><p>Now you have someone who treats you like a queen, and I have an amazing brother-in-law. You deserve the happiness you’ve found. Seeing you loved like this makes me happier than I can write about without crying a little.</p><p class="closing-line">And yes, I’m crying a little.</p>
+                <div class="tarot-spread" aria-label="A three-card tarot spread">
+                  <p class="interaction-whisper">turn the cards</p>
+                  <div class="tarot-row">
+                    <div class="tarot-item">
+                      <button class="tarot-card" type="button" data-tarot-card aria-pressed="false" aria-label="Turn over the Ace of Cups">
+                        <span class="tarot-card-inner">
+                          <span class="tarot-face tarot-back" aria-hidden="true"><span class="tarot-back-star">✦</span><span class="tarot-back-moon">☾</span></span>
+                          <span class="tarot-face tarot-front tarot-front--image">
+                            <img class="tarot-card-image" src="images/tarot-ace-of-cups.jpg" alt="Ace of Cups tarot card">
+                            <span class="sr-only tarot-title">Ace of Cups</span>
+                          </span>
+                        </span>
+                      </button>
+                      <p class="tarot-meaning" data-tarot-meaning><strong>Love</strong><span>emotional openness, a full heart</span></p>
+                    </div>
+                    <div class="tarot-item">
+                      <button class="tarot-card" type="button" data-tarot-card aria-pressed="false" aria-label="Turn over the Two of Cups">
+                        <span class="tarot-card-inner">
+                          <span class="tarot-face tarot-back" aria-hidden="true"><span class="tarot-back-star">✦</span><span class="tarot-back-moon">☾</span></span>
+                          <span class="tarot-face tarot-front tarot-front--image">
+                            <img class="tarot-card-image" src="images/tarot-two-of-cups.jpg" alt="Two of Cups tarot card">
+                            <span class="sr-only tarot-title">Two of Cups</span>
+                          </span>
+                        </span>
+                      </button>
+                      <p class="tarot-meaning" data-tarot-meaning><strong>Connection</strong><span>partnership, mutual bond</span></p>
+                    </div>
+                    <div class="tarot-item">
+                      <button class="tarot-card" type="button" data-tarot-card aria-pressed="false" aria-label="Turn over The Sun">
+                        <span class="tarot-card-inner">
+                          <span class="tarot-face tarot-back" aria-hidden="true"><span class="tarot-back-star">✦</span><span class="tarot-back-moon">☾</span></span>
+                          <span class="tarot-face tarot-front tarot-front--image">
+                            <img class="tarot-card-image" src="images/tarot-the-sun.jpg" alt="The Sun tarot card">
+                            <span class="sr-only tarot-title">The Sun</span>
+                          </span>
+                        </span>
+                      </button>
+                      <p class="tarot-meaning" data-tarot-meaning><strong>Happiness</strong><span>joy, warmth, good things growing</span></p>
+                    </div>
+                  </div>
+                </div>
                 
               </div>
             </article>
@@ -724,18 +784,28 @@
               <div class="note-inner">
                 <h2>You&#x27;re my sister.</h2>
                 <p>You’re my person. I have looked up to you for as long as I can remember, even though you’re younger than me.</p><p>Growing up, before I understood why the world so often felt confusing to me, I watched you. You seemed to know how to move through it in ways that I didn’t yet understand. You gave me an example to follow when I desperately needed one. I learned from you, sometimes without either of us realizing that was what was happening.</p><p>And I still look up to you now. I look at the way you treat people, the way you teach, the way you love, and the care you put into the person you are. You have this combination of kindness, strength, humour and grace that I have admired in every version of you. Knowing you has made me a better person, not because you ever set out to teach me how to be one, but because loving you gave me someone worth aspiring to be more like.</p><p class="universe-line">There are billions of people in this world who could know you, love you, learn from you, laugh with you and be changed by knowing you. But somehow, out of everyone in the universe, I’m the one who gets to call you my sister.</p><p class="closing-line">I don’t think I will ever stop being grateful for that.</p>
-                <div class="birthday-finale" aria-hidden="true"><span>Happy 27th,</span><strong>birthday buddy.</strong><i>✦</i></div>
               </div>
             </article>
           </div>
           <nav class="memory-nav">
             <a href="#memory-26" class="memory-link memory-link--ghost" data-jump="memory-26">previous</a>
-            <button class="memory-link finale-button" data-finale-button>one more thing</button>
+            <button class="memory-link finale-button" data-finale-button>one last thing</button>
           </nav>
+        </div>
+      </section>
+      <section class="screen epilogue-screen" id="epilogue" aria-labelledby="epilogue-title">
+        <div class="epilogue-inner">
+          <p class="epilogue-kicker">one last thing</p>
+          <h2 id="epilogue-title"><span>Happy 27th,</span><strong>birthday buddy.</strong></h2>
+          <span class="epilogue-mark" aria-hidden="true">✦</span>
+          <button class="epilogue-home" type="button" data-jump="cover">back to the beginning</button>
         </div>
       </section>
     </main>
   </div>
+  <audio id="background-music" loop preload="metadata">
+    <source src="audio/the-space-between.mp3" type="audio/mpeg">
+  </audio>
   <script src="script.js"></script>
 </body>
 </html>
