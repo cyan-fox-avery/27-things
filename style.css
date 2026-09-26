@@ -257,3 +257,14 @@ body.epilogue-mode .progress-pill { opacity:0; pointer-events:none; }
   .epilogue-inner { margin-top:4vh; padding:54px 18px 40px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } *, *::before, *::after { animation:none !important; transition-duration:.01ms !important; transition-delay:0ms !important; } body.cover-mode .star-field, body.epilogue-mode .star-field { opacity:1; } body.cover-mode .star-field .star, body.epilogue-mode .star-field .star { opacity:1; transform:none; } }
+
+/* Safari fix: prevent tarot backs bleeding through the card faces */
+.tarot-card.is-flipped .tarot-back {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.tarot-card:not(.is-flipped) .tarot-front {
+  opacity: 0;
+  visibility: hidden;
+}
